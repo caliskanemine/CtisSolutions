@@ -34,5 +34,13 @@ Feature: Default
 		Then clicks to the Log In button
 		And "Incorrect username or password" message should be displayed
 
+	@CTSL10-325
+	Scenario: Verify - "Please fill out this field" message is displayed when the password or username is empty
+		Given user is on the login page
+		When user enters username "marketing1@cybertekschool.com"
+		And user leaves the password field empty
+		Then clicks to the Log In button
+		And "Please fill out this field." message should displayed
+
 
 
