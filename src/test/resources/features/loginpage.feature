@@ -56,4 +56,10 @@ Feature: Default
 		And user sees Remember Me link on the page.
 		Then user clicks to the link.
 
+	@CTSL10-328
+	Scenario: Verify user can see the password in bullet signs by default
+		Given user is on the login page
+		And user enters password "UserUser"
+		Then user sees the written password in bullet signs.
+
 
