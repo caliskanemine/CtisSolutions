@@ -2,6 +2,7 @@ package com.ctis.step_definitions;
 
 import com.ctis.pages.LoginPageElements;
 import com.ctis.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -35,5 +36,10 @@ public class loginpage_stepDefinitions {
     }
 
 
-
+    @And("{string} message should be displayed")
+    public void messageShouldBeDisplayed(String errortext) {
+        String actualMessage= loginPageElements.errorText.getText();
+        String expectedMessage= "Incorrect username or password";
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
 }
