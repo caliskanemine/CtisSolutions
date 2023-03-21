@@ -2,6 +2,7 @@ package com.ctis.step_definitions;
 
 import com.ctis.pages.LoginPageElements;
 import com.ctis.utilities.Driver;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -10,7 +11,10 @@ public class loginpage_stepDefinitions {
 
     LoginPageElements loginPageElements= new LoginPageElements();
 
-
+    @Given("user is on the login page")
+    public void userIsOnTheLoginPage() {
+        Driver.getDriver().get("https://qa.ctissolutions.com/");
+    }
     @When("user enters username {string}")
     public void user_enters_username(String username) {
            loginPageElements.inputUsername.sendKeys(username);
@@ -29,5 +33,7 @@ public class loginpage_stepDefinitions {
      String expectedTitle= "Portal";
         Assert.assertTrue(actualTitle.contains(expectedTitle));
     }
+
+
 
 }
