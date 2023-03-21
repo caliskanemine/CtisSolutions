@@ -31,7 +31,8 @@ public class LoginPageElements {
     public WebElement expectedFilloutMessage;
 
 
-
+    @FindBy(xpath = "//a[@class='login-link-forgot-pass']")
+    public WebElement forgotPasswordLink;
 
 
 
