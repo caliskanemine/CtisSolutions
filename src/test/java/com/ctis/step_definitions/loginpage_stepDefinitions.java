@@ -74,4 +74,17 @@ public class loginpage_stepDefinitions {
       String expectedPageTitle= getPassword;
       Assert.assertEquals(actualPageTitle, expectedPageTitle);
     }
+
+    @And("user sees Remember Me link on the page.")
+    public void userSeesRememberMeLinkOnThePage() {
+        System.out.println(loginPageElements.rememberMeLink.isDisplayed());
+    }
+
+
+    @Then("user clicks to the link.")
+    public void userClicksToTheLink() {
+        loginPageElements.rememberMeLink.click();
+    }
+
+
 }
