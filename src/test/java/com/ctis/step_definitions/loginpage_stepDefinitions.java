@@ -37,9 +37,21 @@ public class loginpage_stepDefinitions {
 
 
     @And("{string} message should be displayed")
-    public void messageShouldBeDisplayed(String errortext) {
+    public void messageShouldBeDisplayed(String errorText) {
         String actualMessage= loginPageElements.errorText.getText();
-        String expectedMessage= "Incorrect username or password";
+        String expectedMessage= errorText;
         Assert.assertEquals(expectedMessage, actualMessage);
+    }
+
+    @And("user leaves the password field empty")
+    public void userLeavesThePasswordFieldEmpty() {
+        loginPageElements.inputPassword.sendKeys("");
+    }
+
+    @And("{string} message should displayed")
+    public void messageShouldDisplayed(String fillOutMessage) {
+      String actualMessage= loginPageElements.expectedFilloutMessage.getText();
+      String extepctedText= fillOutMessage;
+      Assert.assertEquals(extepctedText, actualMessage);
     }
 }
