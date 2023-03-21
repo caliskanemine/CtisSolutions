@@ -34,6 +34,9 @@ public class LoginPageElements {
     @FindBy(xpath = "//a[@class='login-link-forgot-pass']")
     public WebElement forgotPasswordLink;
 
+    @FindBy(xpath = "//label[.='Remember me on this computer']")
+    public WebElement rememberMeLink;
+
 
 
 
