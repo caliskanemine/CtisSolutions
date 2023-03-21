@@ -54,4 +54,24 @@ public class loginpage_stepDefinitions {
       String extepctedText= fillOutMessage;
       Assert.assertEquals(extepctedText, actualMessage);
     }
+
+
+    @And("user sees Forgot Password link on the page.")
+    public void userSeesForgotPasswordLinkOnThePage() {
+        System.out.println(loginPageElements.forgotPasswordLink.isDisplayed());
+    }
+
+
+    @When("user click to the forgot password link")
+    public void userClickToTheForgotPasswordLink() {
+        loginPageElements.forgotPasswordLink.click();
+    }
+
+
+    @Then("user lands on the {string} page.")
+    public void userLandsOnThePage(String getPassword) {
+      String actualPageTitle=  Driver.getDriver().getTitle();
+      String expectedPageTitle= getPassword;
+      Assert.assertEquals(actualPageTitle, expectedPageTitle);
+    }
 }
