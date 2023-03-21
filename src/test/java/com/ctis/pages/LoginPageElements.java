@@ -23,6 +23,12 @@ public class LoginPageElements {
     public WebElement loginButton;
 
 
+    @FindBy(className = "errortext")
+    public WebElement errorText;
+
+
+
+
 
 
 
