@@ -50,4 +50,10 @@ Feature: Default
 		Then user lands on the "Get Password" page.
 
 
+	@CTSL10-327
+	Scenario: Verify user can see "Remember Me" link exists and is clickable on the login page
+		Given user is on the login page
+		And user sees Remember Me link on the page.
+		Then user clicks to the link.
+
 
