@@ -42,5 +42,12 @@ Feature: Default
 		Then clicks to the Log In button
 		And "Please fill out this field." message should displayed
 
+	@CTSL10-326
+	Scenario: Verify ‘Forgot Password’ link exists and is clickable on the login page
+		Given user is on the login page
+		And user sees Forgot Password link on the page.
+		When user click to the forgot password link
+		Then user lands on the "Get Password" page.
+
 
 
