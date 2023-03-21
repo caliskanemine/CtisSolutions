@@ -27,6 +27,8 @@ public class LoginPageElements {
     public WebElement errorText;
 
 
+    @FindBy(xpath = "//div[.='Incorrect login or password']")
+    public WebElement expectedFilloutMessage;
 
 
 
