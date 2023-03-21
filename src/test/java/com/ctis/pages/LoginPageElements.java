@@ -37,6 +37,10 @@ public class LoginPageElements {
     @FindBy(xpath = "//label[.='Remember me on this computer']")
     public WebElement rememberMeLink;
 
+    public String isBulletSign(){
+        return inputPassword.getAttribute("type");
+    }
+
 
 
 
