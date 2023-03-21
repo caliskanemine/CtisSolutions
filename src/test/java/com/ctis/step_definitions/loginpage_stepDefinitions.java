@@ -87,4 +87,8 @@ public class loginpage_stepDefinitions {
     }
 
 
+    @Then("user sees the written password in bullet signs.")
+    public void userSeesTheWrittenPasswordInBulletSigns() {
+          Assert.assertEquals(loginPageElements.isBulletSign(), "password");
+    }
 }
