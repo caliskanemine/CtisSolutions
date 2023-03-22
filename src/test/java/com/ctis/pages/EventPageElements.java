@@ -24,6 +24,14 @@ public class EventPageElements {
     @FindBy(name = "TIME_FROM_")
     public WebElement startTime;
 
+    @FindBy(xpath = "//input[@title='Hours']")
+    public WebElement clockHour;
+
+    @FindBy(xpath = "//input[@title='Minutes']")
+    public WebElement clockMinutes;
+    @FindBy(xpath = "//input[@value='Set Time']")
+    public WebElement setTime;
+
     @FindBy(name = "TIME_TO_")
     public WebElement endTime;
 

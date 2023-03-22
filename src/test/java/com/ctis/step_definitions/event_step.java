@@ -1,35 +1,48 @@
 package com.ctis.step_definitions;
 
+import com.ctis.pages.EventPageElements;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
 
 public class event_step {
 
+    EventPageElements eventPageElements = new EventPageElements();
+
     @When("user click to event button")
     public void user_click_to_event_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       eventPageElements.eventButton.click();
     }
+
     @When("user add event start date")
     public void user_add_event_start_date() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+   eventPageElements.startDate.sendKeys(Keys.CLEAR+"23/04/2023");
     }
+
     @When("user add event start time")
     public void user_add_event_start_time() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       eventPageElements.startTime.click();
+       eventPageElements.clockHour.sendKeys("08");
+       eventPageElements.clockMinutes.sendKeys("30");
+       eventPageElements.setTime.click();
     }
     @Then("user add event end date")
     public void user_add_event_end_date() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        eventPageElements.endDate.sendKeys(Keys.CLEAR+"24/04/2023");
     }
     @Then("user add event end time")
     public void user_add_event_end_time() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        eventPageElements.startTime.click();
+        eventPageElements.clockHour.sendKeys("17");
+        eventPageElements.clockMinutes.sendKeys("30");
+        eventPageElements.setTime.click();
     }
+
+
+
+
+
+
     @Then("user specify the time zone")
     public void user_specify_the_time_zone() {
         // Write code here that turns the phrase above into concrete actions
