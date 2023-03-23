@@ -7,16 +7,17 @@ Feature:User use all Event functionality
     Then clicks to the Log In button
     And user lands on the home page.
     When user click to event button
-
+@first
   Scenario: User should be able to add Event start and ending date and time,
   select "All day" and specify the time zone.
-    And user add event start date
-    And user add event start time
-    Then user add event end date
-    Then user add event end time
-    Then user specify the time zone
+    And user add new event start date as "23/04/2023"
+    And user add new event start time 8 and 30
+    Then user add new event end date "25/04/2023"
+    Then user add new event end time 17 and 30
+    Then user specify the time zone as "(UTC -07:00) America/Los_Angeles"
     Then user click all day radiobutton
 
+  @second
   Scenario: User should be able to set reminder.
     And user click set reminder button
     Then user set remind count
@@ -34,16 +35,16 @@ Feature:User use all Event functionality
     Then user click members bar
     Then user click Employees and department button
     Then user add 'group15'
-    Then user click 'All departnet and sub-department' radiobutton
+    Then user click 'All department and sub-department' radiobutton
 
   Scenario: User should be able to send message by filling the mandatory fields
     And user click event name bar
-    Then user write event name
+    Then user write "event name"
     Then click send button
 
   Scenario: User should be able to cancel sending event at any time before sending.
     And user click event name bar
-    Then user write event name
+    Then user write "event name"
     Then user cancel event
 
     When user click to event button
@@ -54,10 +55,10 @@ Feature:User use all Event functionality
     Then user cancel event
 
     When user click to event button
-    And user add event start date
-    And user add event start time
-    Then user add event end date
-    Then user add event end time
+    And user add new event start date as "12/06/2025"
+    And user add new event start time 09 and 00
+    Then user add new event end date "15/06/2025"
+    Then user add new event end time 17 and 00
     Then user specify the time zone
     Then user click all day radiobutton
     Then user cancel event

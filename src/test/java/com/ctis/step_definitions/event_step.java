@@ -1,9 +1,12 @@
 package com.ctis.step_definitions;
 
 import com.ctis.pages.EventPageElements;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 
 public class event_step {
 
@@ -11,48 +14,49 @@ public class event_step {
 
     @When("user click to event button")
     public void user_click_to_event_button() {
-       eventPageElements.eventButton.click();
+        eventPageElements.eventButton.click();
     }
 
-    @When("user add event start date")
-    public void user_add_event_start_date() {
-   eventPageElements.startDate.sendKeys(Keys.CLEAR+"23/04/2023");
+    @And("user add new event start date as {string}")
+    public void userAddNewEvent(String date) {
+        eventPageElements.startDate.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + date);
     }
 
-    @When("user add event start time")
-    public void user_add_event_start_time() {
-       eventPageElements.startTime.click();
-       eventPageElements.clockHour.sendKeys("08");
-       eventPageElements.clockMinutes.sendKeys("30");
-       eventPageElements.setTime.click();
-    }
-    @Then("user add event end date")
-    public void user_add_event_end_date() {
-        eventPageElements.endDate.sendKeys(Keys.CLEAR+"24/04/2023");
-    }
-    @Then("user add event end time")
-    public void user_add_event_end_time() {
+    @And("user add new event start time {int} and {int}")
+    public void userAddNewEventStartTimeAnd(int hour, int minute) {
         eventPageElements.startTime.click();
-        eventPageElements.clockHour.sendKeys("17");
-        eventPageElements.clockMinutes.sendKeys("30");
+        eventPageElements.clockHour.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + hour);
+        eventPageElements.clockMinutes.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);
         eventPageElements.setTime.click();
     }
 
-
-
-
-
-
-    @Then("user specify the time zone")
-    public void user_specify_the_time_zone() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("user add new event end date {string}")
+    public void userAddNewEventEndDate(String date) {
+        eventPageElements.endDate.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + date);
     }
+
+    @Then("user add new event end time {int} and {int}")
+    public void userAddNewEventEndTimeAnd(int hour, int minute) {
+        eventPageElements.startTime.click();
+        eventPageElements.clockHour.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + hour);
+        eventPageElements.clockMinutes.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);
+        eventPageElements.setTime.click();
+    }
+
+    @Then("user specify the time zone as {string}")
+    public void user_specify_the_time_zone_as(String zone) {
+        eventPageElements.specifytimezone.click();
+        Select simpleDropdown = new Select(eventPageElements.timeZone);
+        simpleDropdown.selectByVisibleText(zone);
+    }
+
     @Then("user click all day radiobutton")
     public void user_click_all_day_radiobutton() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        eventPageElements.allDayButton.click();
     }
+
+
+
 
 
     @When("user click set reminder button")
@@ -60,11 +64,13 @@ public class event_step {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
     @Then("user set remind count")
     public void user_set_remind_count() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
     @Then("user set remind type")
     public void user_set_remind_type() {
         // Write code here that turns the phrase above into concrete actions
@@ -83,16 +89,19 @@ public class event_step {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
     @Then("user add {string}")
     public void user_add(String string) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
     @Then("user click Employees and department button")
     public void user_click_employees_and_department_button() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
     @Then("user click {string} radiobutton")
     public void user_click_radiobutton(String string) {
         // Write code here that turns the phrase above into concrete actions
@@ -111,11 +120,11 @@ public class event_step {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-    @Then("user write event name")
-    public void user_write_event_name() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Then("user write {string}")
+    public void userWrite(String name) {
     }
+
     @Then("user cancel event")
     public void user_cancel_event() {
         // Write code here that turns the phrase above into concrete actions

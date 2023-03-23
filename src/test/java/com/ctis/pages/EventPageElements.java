@@ -39,8 +39,11 @@ public class EventPageElements {
     @FindBy(xpath = "//span[@class='feed-ev-tz-open']")
     public WebElement specifytimezone;
 
+    @FindBy (id = "feed-cal-tz-fromcal_3Jcl")
+    public WebElement timeZone;
 
-    @FindBy(name = "event-full-daycal_3Jcl")
+
+    @FindBy(id = "event-full-daycal_3Jcl")
     public WebElement allDayButton;
 
     @FindBy(name = "EVENT_REMIND")
