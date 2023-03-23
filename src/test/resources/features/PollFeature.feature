@@ -6,7 +6,7 @@ Feature: Default
 		And user enters password "UserUser"
 		Then clicks to the Log In button
 		And user lands on the home page.
-		And user
+
 
 	@CTSL10-316 @CTSL10-315 @CtisSolutions
 	Scenario: User should be able to add users, add questions and answers, delete questions and answers with multiple choices
