@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"},
         features = "src/test/resources/features",
         glue = "com/ctis/step_definitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@CTSL10-316",
         publish = true
 )

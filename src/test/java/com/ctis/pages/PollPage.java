@@ -17,16 +17,16 @@ public class PollPage {
     @FindBy(xpath = "//a[@id='bx-destination-tag']")
     public WebElement AddmoreButton;
 
-    @FindBy(xpath = "//a[@id='destDepartmentTab_destination5715418']")
+    @FindBy(xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-department']")
     public WebElement EmployeesAndDepartmentsButton;
 
-    @FindBy(xpath = "//div[text()='marketing5@cybertekschool.com']")
+    @FindBy(xpath = "//*[@id=\"bx-lm-category-relation-129\"]/a[1]/div[1]/div[1]")
     public WebElement marketingEmail;
 
-    @FindBy(xpath = "//div[text()='hr76@cybertekschool.com']")
+    @FindBy(xpath = "//*[@id=\"bx-lm-category-relation-129\"]/a[2]/div[1]/div[1]")
     public WebElement hrEmail;
 
-    @FindBy(xpath = "//div[text()='helpdesk2@cybertekschool.com']")
+    @FindBy(xpath = "//*[@id=\"bx-lm-category-relation-129\"]/a[3]/div[1]/div[1]")
     public WebElement helpdeskEmail;
 
     @FindBy(xpath = "//span[@class='popup-window-close-icon']")
@@ -50,10 +50,10 @@ public class PollPage {
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement SaveButton;
 
-    @FindBy(xpath = "//body[@contenteditable='true']")
+    @FindBy(xpath = "//div[@id='bx-html-editor-iframe-cnt-idPostFormLHE_blogPostForm']//iframe[@class='bx-editor-iframe']")
     public WebElement titleMessageBox;
 
-    @FindBy(xpath = "//span[@id='feed-post-more-164']")
+    @FindBy(xpath = "//span[@class='feed-post-more-text']")
     public WebElement moreButton;
 
     @FindBy(xpath = "//span[text()='Delete']")
