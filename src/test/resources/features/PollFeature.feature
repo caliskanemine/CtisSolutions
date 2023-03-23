@@ -11,11 +11,11 @@ Feature: Default
 	@CTSL10-316 @CTSL10-315 @CtisSolutions
 	Scenario: User should be able to add users, add questions and answers, delete questions and answers with multiple choices
 		Given User clicks POLL tab
+		And User writes a title in message box
 		When User clicks Add more
 		And User clicks Employees and departments
 		And User select multiple contacts
 		And User click x for closing
-		And User writes a title in message box
 		And User clicks Question and write a question
 		And User clicks AnswerFirst and write an answer
 		And User clicks AnswerSecond and write an answer
