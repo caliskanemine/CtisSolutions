@@ -39,7 +39,7 @@ public class EventPageElements {
     @FindBy(xpath = "//span[@class='feed-ev-tz-open']")
     public WebElement specifytimezone;
 
-    @FindBy (id = "feed-cal-tz-fromcal_3Jcl")
+    @FindBy(id = "feed-cal-tz-fromcal_3Jcl")
     public WebElement timeZone;
 
 
@@ -60,16 +60,21 @@ public class EventPageElements {
 
     @FindBy(xpath = "//a[@id='feed-event-dest-add-link']")
     public WebElement membersBarButton;
-    @FindBy(xpath = "//input[@id='feed-event-dest-input']")
+    @FindBy(xpath = "/html//input[@id='feed-event-dest-input']")
     public WebElement membersWriteBarButton;
 
-    @FindBy(id = "destDepartmentTab_calnAJEM3")
+    @FindBy(xpath = "/html//div[@id='bx-lm-box-search-content']//a[@href='#U707']//div[@class='bx-finder-box-item-t7-name']")
+    public WebElement hr15Button;
+    @FindBy(xpath = "/html//div[@id='bx-lm-box-search-content']//a[@href='#U510']//div[@class='bx-finder-box-item-t7-name']")
+    public WebElement hd20Button;
+
+    @FindBy(xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-department']")
     public WebElement allDepartmentButton;
 
-    @FindBy(xpath = "(//div[@class='bx-finder-company-department-text'])[3]")
+    @FindBy(xpath = "/html//div[@id='bx-lm-box-last-content']/table[@class='bx-finder-box-tabs-content-table']//td/div[2]/div[2]/div[5]/a[@href='#DR138']/div[@class='bx-finder-company-department-text']")
     public WebElement group15Button;
 
-    @FindBy(xpath = "(//div[@class='bx-finder-company-department-check-arrow'])[2]")
+    @FindBy(xpath = "/html//div[@id='bx-lm-box-last-content']/table[@class='bx-finder-box-tabs-content-table']//td[@class='bx-finder-box-tabs-content-cell']/div[2]/div[2]/div[6]/a[@href='#DR138']//div[@class='bx-finder-company-department-check-arrow']")
     public WebElement group15AllDepartmentButton;
 
 

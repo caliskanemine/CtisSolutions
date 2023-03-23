@@ -7,9 +7,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 public class event_step {
 
@@ -59,11 +63,9 @@ public class event_step {
     }
 
 
-
-
     @When("user click set reminder button")
     public void user_click_set_reminder_button() {
-   Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         eventPageElements.setReminderButton.click();
     }
 
@@ -82,26 +84,38 @@ public class event_step {
     }
 
 
-
     @Then("user set event location as {string}")
     public void user_set_event_location(String location) {
         eventPageElements.eventlocationButton.sendKeys(location);
-          }
-
-
+    }
 
 
     @Then("user click members bar")
     public void user_click_members_bar() {
-       eventPageElements.membersBarButton.click();
+        eventPageElements.membersBarButton.click();
     }
 
-    @Then("user add {string}")
-    public void user_add(String employee) {
+    @Then("user add hr15@cybertekschool.com")
+    public void user_add_hr15() {
 
         eventPageElements.membersWriteBarButton.click();
-        eventPageElements.membersWriteBarButton.sendKeys(employee);
-        eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
+        eventPageElements.membersWriteBarButton.sendKeys("hr15");
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.visibilityOf(eventPageElements.hr15Button));
+
+        eventPageElements.hr15Button.click();
+       // eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
+    }
+
+    @Then("user add helpdesk20@cybertekschool.com")
+    public void user_add_hd20() {
+
+        eventPageElements.membersWriteBarButton.click();
+        eventPageElements.membersWriteBarButton.sendKeys("helpdesk20");
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.visibilityOf(eventPageElements.hd20Button));
+        eventPageElements.hd20Button.click();
+        // eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
     }
 
     @Then("user click Employees and department button")
@@ -113,22 +127,24 @@ public class event_step {
     }
 
 
-
     @Then("user click All department and sub-department radiobutton")
     public void user_click_radiobutton() {
         eventPageElements.membersWriteBarButton.click();
         eventPageElements.allDepartmentButton.click();
+    }
+
+    @Then("user add group15")
+    public void userAdd() {
+        eventPageElements.membersWriteBarButton.click();
+        eventPageElements.allDepartmentButton.click();
+        eventPageElements.group15Button.click();
         eventPageElements.group15AllDepartmentButton.click();
         eventPageElements.membersWriteBarButton.click();
     }
-
-
-
     @When("user click event name bar")
     public void user_click_event_name_bar() {
         eventPageElements.eventName.click();
     }
-
 
 
     @Then("user write {string}")
@@ -142,11 +158,11 @@ public class event_step {
     }
 
 
-
     @Then("user cancel event")
     public void user_cancel_event() {
-       eventPageElements.cancelButton.click();
+        eventPageElements.cancelButton.click();
     }
+
 
 
 }
