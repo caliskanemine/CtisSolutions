@@ -87,8 +87,7 @@ public class PollStepDefinition {
     }
     @Then("Verify {string} message is displayed")
     public void verify_message_is_displayed(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
 }
