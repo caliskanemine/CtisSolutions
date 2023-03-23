@@ -58,8 +58,10 @@ public class EventPageElements {
     @FindBy(id = "event-locationcal_3Jcl")
     public WebElement eventlocationButton;
 
-    @FindBy(id = "feed-event-dest-add-link")
+    @FindBy(xpath = "//a[@id='feed-event-dest-add-link']")
     public WebElement membersBarButton;
+    @FindBy(xpath = "//input[@id='feed-event-dest-input']")
+    public WebElement membersWriteBarButton;
 
     @FindBy(id = "destDepartmentTab_calnAJEM3")
     public WebElement allDepartmentButton;

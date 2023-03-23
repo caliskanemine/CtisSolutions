@@ -31,14 +31,15 @@ Feature:User use all Event functionality
   Scenario: User should be able to add members by selecting
   contacts individually or adding groups and departments.
     Then user click members bar
-    Then user add 'hr15@cybertekschool.com'
+    Then user add "hr5@cybertekschool.com"
     Then user click members bar
-    Then user add 'helpdesk20@cybertekschool.com'
+    Then user add "helpdesk20@cybertekschool.com"
     Then user click members bar
     Then user click Employees and department button
-    Then user add 'group15'
-    Then user click 'All department and sub-department' radiobutton
+    Then user add "group15"
+    Then user click All department and sub-department radiobutton
 
+    @fifth
   Scenario: User should be able to send message by filling the mandatory fields
     And user click event name bar
     Then user write "event name"
@@ -61,7 +62,7 @@ Feature:User use all Event functionality
     And user add new event start time 09 and 00
     Then user add new event end date "15/06/2025"
     Then user add new event end time 17 and 00
-    Then user specify the time zone
+    Then user specify the time zone as "(UTC -07:00) America/Los_Angeles"
     Then user click all day radiobutton
     Then user cancel event
 

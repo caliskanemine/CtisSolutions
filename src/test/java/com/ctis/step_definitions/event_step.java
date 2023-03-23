@@ -93,49 +93,59 @@ public class event_step {
 
     @Then("user click members bar")
     public void user_click_members_bar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       eventPageElements.membersBarButton.click();
     }
 
     @Then("user add {string}")
-    public void user_add(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_add(String employee) {
+
+        eventPageElements.membersWriteBarButton.click();
+        eventPageElements.membersWriteBarButton.sendKeys(employee);
+        eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
     }
 
     @Then("user click Employees and department button")
     public void user_click_employees_and_department_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+        eventPageElements.membersWriteBarButton.click();
+        eventPageElements.allDepartmentButton.click();
+        eventPageElements.group15Button.click();
 
-    @Then("user click {string} radiobutton")
-    public void user_click_radiobutton(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
 
 
-    @Then("click send button")
-    public void click_send_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Then("user click All department and sub-department radiobutton")
+    public void user_click_radiobutton() {
+        eventPageElements.membersWriteBarButton.click();
+        eventPageElements.allDepartmentButton.click();
+        eventPageElements.group15AllDepartmentButton.click();
+        eventPageElements.membersWriteBarButton.click();
     }
+
+
 
     @When("user click event name bar")
     public void user_click_event_name_bar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        eventPageElements.eventName.click();
     }
+
+
 
     @Then("user write {string}")
     public void userWrite(String name) {
+        eventPageElements.eventName.sendKeys(name);
     }
+
+    @Then("click send button")
+    public void click_send_button() {
+        eventPageElements.sendButton.click();
+    }
+
+
 
     @Then("user cancel event")
     public void user_cancel_event() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       eventPageElements.cancelButton.click();
     }
 
 
