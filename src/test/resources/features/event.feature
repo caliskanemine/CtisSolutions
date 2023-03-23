@@ -20,12 +20,14 @@ Feature:User use all Event functionality
   @second
   Scenario: User should be able to set reminder.
     And user click set reminder button
-    Then user set remind count
+    Then user set remind count as 3
     Then user set remind type
 
+  @third
   Scenario: User should be able to select event location from dropdown.
-    Then user set event location
+    Then user set event location as "East Meeting Room"
 
+  @fourth
   Scenario: User should be able to add members by selecting
   contacts individually or adding groups and departments.
     Then user click members bar

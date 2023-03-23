@@ -46,16 +46,16 @@ public class EventPageElements {
     @FindBy(id = "event-full-daycal_3Jcl")
     public WebElement allDayButton;
 
-    @FindBy(name = "EVENT_REMIND")
+    @FindBy(xpath = "//input[@class='feed-event-rem-ch']")
     public WebElement setReminderButton;
 
-    @FindBy(name = "EVENT_REMIND_COUNT")
+    @FindBy(id = "event-remind_countcal_3Jcl")
     public WebElement remindercountButton;
 
     @FindBy(name = "EVENT_REMIND_TYPE")
     public WebElement remindertypeButton;
 
-    @FindBy(name = "EVENT_LOCATION")
+    @FindBy(id = "event-locationcal_3Jcl")
     public WebElement eventlocationButton;
 
     @FindBy(id = "feed-event-dest-add-link")

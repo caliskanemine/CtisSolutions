@@ -1,12 +1,15 @@
 package com.ctis.step_definitions;
 
 import com.ctis.pages.EventPageElements;
+import com.ctis.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.concurrent.TimeUnit;
 
 public class event_step {
 
@@ -58,30 +61,34 @@ public class event_step {
 
 
 
-
     @When("user click set reminder button")
     public void user_click_set_reminder_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+   Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        eventPageElements.setReminderButton.click();
     }
 
-    @Then("user set remind count")
-    public void user_set_remind_count() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("user set remind count as {int}")
+    public void user_set_remind_count_as(int count) {
+        eventPageElements.setReminderButton.click();
+        Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        eventPageElements.remindercountButton.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + count);
     }
 
     @Then("user set remind type")
     public void user_set_remind_type() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        Select simpleDropdown = new Select(eventPageElements.remindertypeButton);
+        simpleDropdown.selectByVisibleText("days");
     }
 
-    @Then("user set event location")
-    public void user_set_event_location() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
+
+    @Then("user set event location as {string}")
+    public void user_set_event_location(String location) {
+        eventPageElements.eventlocationButton.sendKeys(location);
+          }
+
+
 
 
     @Then("user click members bar")
@@ -130,7 +137,6 @@ public class event_step {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
-
 
 
 }
