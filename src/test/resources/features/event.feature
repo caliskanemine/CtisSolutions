@@ -33,11 +33,11 @@ Feature:User use all Event functionality
   Scenario: User should be able to add members by selecting
   contacts individually or adding groups and departments.
     Then user click members bar
-    Then user add hr15@cybertekschool.com
-    Then user add helpdesk20@cybertekschool.com
+    Then user add "hr15@cybertekschool.com"
+    Then user add "helpdesk20@cybertekschool.com"
     Then user click Employees and department button
-    Then user add group15
-    Then user click All department and sub-department radiobutton
+    Then user add "group15" group
+    Then user click All department and sub-department radiobutton about "group15"
 
   @fifth
   Scenario: User should be able to send message by filling the mandatory fields
@@ -53,11 +53,11 @@ Feature:User use all Event functionality
 
     When user click to event button
     Then user click members bar
-    Then user add hr15@cybertekschool.com
-    Then user add helpdesk20@cybertekschool.com
+    Then user add "hr15@cybertekschool.com"
+    Then user add "helpdesk20@cybertekschool.com"
     Then user click Employees and department button
-    Then user add group15
-    Then user click All department and sub-department radiobutton
+    Then user add "group15" group
+    Then user click All department and sub-department radiobutton about "group15"
     Then user cancel event
 
     When user click to event button

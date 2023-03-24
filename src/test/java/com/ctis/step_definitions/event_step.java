@@ -17,6 +17,7 @@ import java.util.function.Function;
 
 public class event_step {
 
+
     EventPageElements eventPageElements = new EventPageElements();
 
     @When("user click to event button")
@@ -32,9 +33,12 @@ public class event_step {
     @And("user add new event start time {int} and {int}")
     public void userAddNewEventStartTimeAnd(int hour, int minute) {
         eventPageElements.startTime.click();
+        /*WebDriverWait wait= new WebDriverWait(Driver.getDriver(),10);
+        wait.until(ExpectedConditions.visibilityOf(eventPageElements.clockHour));
         eventPageElements.clockHour.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + hour);
-        eventPageElements.clockMinutes.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);
-        eventPageElements.setTime.click();
+        eventPageElements.clockMinutes.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);*/
+        eventPageElements.setStartTime(hour,minute);
+        eventPageElements.setstartTimeButton.click();
     }
 
     @Then("user add new event end date {string}")
@@ -44,10 +48,14 @@ public class event_step {
 
     @Then("user add new event end time {int} and {int}")
     public void userAddNewEventEndTimeAnd(int hour, int minute) {
-        eventPageElements.startTime.click();
+        eventPageElements.endTime.click();
+        /*WebDriverWait wait= new WebDriverWait(Driver.getDriver(),10);
+        wait.until(ExpectedConditions.visibilityOf(eventPageElements.clockHour));
         eventPageElements.clockHour.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + hour);
         eventPageElements.clockMinutes.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);
-        eventPageElements.setTime.click();
+        */
+        eventPageElements.setEndTime(hour,minute);
+        eventPageElements.setendTimeButton.click();
     }
 
     @Then("user specify the time zone as {string}")
@@ -95,19 +103,19 @@ public class event_step {
         eventPageElements.membersBarButton.click();
     }
 
-    @Then("user add hr15@cybertekschool.com")
-    public void user_add_hr15() {
+    @Then("user add {string}")
+    public void user_add_hr15(String employeeEmail) {
 
         eventPageElements.membersWriteBarButton.click();
-        eventPageElements.membersWriteBarButton.sendKeys("hr15");
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        eventPageElements.membersWriteBarButton.sendKeys(employeeEmail);
+       /* WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(eventPageElements.hr15Button));
-
-        eventPageElements.hr15Button.click();
+*/
+        eventPageElements.addEmployee(employeeEmail);
        // eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
     }
 
-    @Then("user add helpdesk20@cybertekschool.com")
+    /*@Then("user add helpdesk20@cybertekschool.com")
     public void user_add_hd20() {
 
         eventPageElements.membersWriteBarButton.click();
@@ -116,31 +124,35 @@ public class event_step {
         wait.until(ExpectedConditions.visibilityOf(eventPageElements.hd20Button));
         eventPageElements.hd20Button.click();
         // eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
-    }
+    }*/
 
     @Then("user click Employees and department button")
     public void user_click_employees_and_department_button() {
         eventPageElements.membersWriteBarButton.click();
         eventPageElements.allDepartmentButton.click();
-        eventPageElements.group15Button.click();
 
     }
 
 
-    @Then("user click All department and sub-department radiobutton")
-    public void user_click_radiobutton() {
+
+
+    @Then("user add {string} group")
+    public void userAdd(String groupName) {
         eventPageElements.membersWriteBarButton.click();
         eventPageElements.allDepartmentButton.click();
+        eventPageElements.getGroupName(groupName);
+
     }
 
-    @Then("user add group15")
-    public void userAdd() {
+    @Then("user click All department and sub-department radiobutton about {string}")
+    public void user_click_radiobutton(String groupName) {
         eventPageElements.membersWriteBarButton.click();
         eventPageElements.allDepartmentButton.click();
-        eventPageElements.group15Button.click();
-        eventPageElements.group15AllDepartmentButton.click();
+        eventPageElements.getGroupName(groupName);
+        eventPageElements.getGroupAllEmployee(groupName);
         eventPageElements.membersWriteBarButton.click();
     }
+
     @When("user click event name bar")
     public void user_click_event_name_bar() {
         eventPageElements.eventName.click();
