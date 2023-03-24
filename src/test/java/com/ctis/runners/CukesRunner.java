@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/ctis/step_definitions",
         dryRun = false,
-        tags = "@CTSL10-309",
+        tags = " @CTSL10-310",
         publish = true
 )
 public class CukesRunner {

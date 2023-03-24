@@ -57,14 +57,13 @@ public class InteractStepDefinitions {
     @When("User likes  his\\/her own comment")
     public void user_likes_his_her_own_comment() {
 
-        interactPage.likeYourComment.click();
+        interactPage.likeCommand(ConfigurationReader.getProperty("userName"));
     }
     @Then("User replays his\\/her own comment")
     public void user_replays_his_her_own_comment() {
-        interactPage.replyYourCommentButton.click();
-        actions.doubleClick(interactPage.commentYourComment).perform();
-        actions.sendKeys("hi").perform();
-        interactPage.sendYourSecondCommentButton.click();
+
+      interactPage.replyAndSendTExtToYourMessage(ConfigurationReader.getProperty("userName"),"Hello");
+
 
 
     }

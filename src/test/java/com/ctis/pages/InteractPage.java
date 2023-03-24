@@ -2,7 +2,9 @@ package com.ctis.pages;
 
 import com.ctis.utilities.Driver;
 import io.cucumber.java.zh_cn.假如;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -35,23 +37,11 @@ public class InteractPage {
     @FindBy(xpath = "(//a[text()='Follow'])[1]")
     public WebElement followButton;
 
-    @FindBy(xpath ="(//div//a[text()='marketing71@cybertekschool.com'])/../../../..//div//a[text()='Like']")
-    public WebElement likeYourComment;
-
-    @FindBy(xpath ="(//div//a[text()='marketing71@cybertekschool.com'])/../../../..//div//a[text()='Reply']")
-    public WebElement replyYourCommentButton;
-
-    @FindBy(xpath = "(//div[@class='bxhtmled-area-cnt'])[1]")
-    public WebElement commentYourComment;
-
-    @FindBy(xpath = "(//button[@class='ui-btn ui-btn-sm ui-btn-primary'])[1]")
-    public WebElement sendYourSecondCommentButton;
-
 
     @FindBy(xpath = "(//span[@class='feed-content-view-cnt'])[2]")
     public WebElement reviewers;
 
-    @FindBy(xpath = "//span[@class='bx-contentview-popup']//a[5]")
+    @FindBy(xpath = "//span[@class='bx-contentview-popup']//a[1]")
     public WebElement reviewerName;
 
 
@@ -61,5 +51,27 @@ public class InteractPage {
     @FindBy(xpath = "//div[@title='Remove from favorites']")
     public WebElement removeStarButton;
 
+    public void likeCommand(String username){
+      WebElement likeButton =  Driver.getDriver().findElement(By.xpath("(//div//a[text()='" +username + "'])[1]/../../../..//div//a[text()='Like']"));
+      likeButton.click();
+
+    }
+
+    public void replyAndSendTExtToYourMessage(String userName, String message){
+
+        WebElement replyButton = Driver.getDriver().findElement(By.xpath("(//div//a[text()='" +userName+"'])[1]/../../../..//div//a[text()='Reply']"));
+        replyButton.click();
+
+        WebElement commentArea = Driver.getDriver().findElement(By.xpath("(//div[@class='bxhtmled-area-cnt'])[1]"));
+
+        WebElement sendCommentButton = Driver.getDriver().findElement(By.xpath("//button[@class='ui-btn ui-btn-sm ui-btn-primary']"));
+
+        Actions actions = new Actions(Driver.getDriver());
+
+        actions.doubleClick(commentArea).perform();
+        actions.sendKeys(message).perform();
+        sendCommentButton.click();
+    }
 
 }
+
