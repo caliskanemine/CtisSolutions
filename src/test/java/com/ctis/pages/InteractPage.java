@@ -2,6 +2,7 @@ package com.ctis.pages;
 
 import com.ctis.utilities.Driver;
 import io.cucumber.java.zh_cn.假如;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -64,13 +65,18 @@ public class InteractPage {
 
         WebElement commentArea = Driver.getDriver().findElement(By.xpath("(//div[@class='bxhtmled-area-cnt'])[1]"));
 
-        WebElement sendCommentButton = Driver.getDriver().findElement(By.xpath("//button[@class='ui-btn ui-btn-sm ui-btn-primary']"));
+        WebElement sendCommentButton = Driver.getDriver().findElement(By.xpath("(//button[@class='ui-btn ui-btn-sm ui-btn-primary'])[1]"));
 
         Actions actions = new Actions(Driver.getDriver());
 
         actions.doubleClick(commentArea).perform();
         actions.sendKeys(message).perform();
         sendCommentButton.click();
+    }
+
+    public void verifyNewComment(String message){
+       WebElement newMessage = Driver.getDriver().findElement(By.xpath("//div[@class='feed-com-text-inner-inner']//div[text()=',"+ message + "']"));
+        Assert.assertTrue(newMessage.getText().contains(message));
     }
 
 }

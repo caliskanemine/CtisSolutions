@@ -64,6 +64,10 @@ public class InteractStepDefinitions {
 
       interactPage.replyAndSendTExtToYourMessage(ConfigurationReader.getProperty("userName"),"Hello");
 
+      BrowserUtils.sleep(2);
+
+      interactPage.verifyNewComment("Hello");
+
 
 
     }
