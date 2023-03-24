@@ -1,4 +1,4 @@
-Feature: Default
+Feature: As a user, I should be able to create a poll by clicking on Poll tab under Active Stream.
 
 	Background: user is already logged in
 		Given user is on the login page
