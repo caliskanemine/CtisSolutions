@@ -26,3 +26,20 @@ Feature: Default
 		And User clicks Delete  button
 		And User clicks OK  button
 		Then Verify "The post has been deleted." message is displayed
+
+
+	@CTSL10-320 @CTSL10-315 @CtisSolutions
+	Scenario: User should see an error message if title message box is empty
+		Given User clicks POLL tab
+		And User leaves blank in title message box, with default recipient
+		And User clicks SEND button
+		Then Verify "The message title is not specified" message is displayed.
+
+
+	@CTSL10-319 @CTSL10-315 @CtisSolutions
+	Scenario: User should see an error message if there is no recipient
+		Given User clicks POLL tab
+		And User writes a title in message box
+		And User remove all recipients by clicking x
+		And User clicks SEND button
+		Then Verify the message "Please specify at least one person." is displayed

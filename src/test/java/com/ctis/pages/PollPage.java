@@ -11,6 +11,7 @@ public class PollPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    //@CTSL10-316
     @FindBy(xpath = "//span[@id='feed-add-post-form-tab-vote']/span")
     public WebElement PollButton;
 
@@ -63,6 +64,19 @@ public class PollPage {
     public WebElement deletingMessage;
 
 
+    //@CTSL10-319
+
+    @FindBy(xpath = "//span[@class='feed-add-post-del-but']")
+    public WebElement removingRecipients;
+
+    @FindBy(xpath = "//span[@class='feed-add-info-text']")
+    public WebElement atLeastOnePersonMessage;
+
+
+
+    //@CTSL10-320
+    @FindBy(xpath = "//span[@class='feed-add-info-text']")
+    public WebElement messageTitleIsNeededMessage;
 
 
 

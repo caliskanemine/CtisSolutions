@@ -4,6 +4,7 @@ import com.ctis.pages.LoginPageElements;
 import com.ctis.pages.PollPage;
 import com.ctis.utilities.BrowserUtils;
 import com.ctis.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -108,7 +109,27 @@ public class PollStepDefinition {
     public void verify_message_is_displayed(String string) {
 
         Assert.assertTrue(pollPage.deletingMessage.isDisplayed());
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
     }
 
+    @And("User leaves blank in title message box, with default recipient")
+    public void userLeavesBlankInTitleMessageBoxWithDefaultRecipient() {
+        BrowserUtils.waitFor(1);
+
+    }
+
+    @Then("Verify {string} message is displayed.")
+    public void verifyMessageIsDisplayed(String arg0) {
+        Assert.assertTrue(pollPage.messageTitleIsNeededMessage.isDisplayed());
+    }
+
+    @And("User remove all recipients by clicking x")
+    public void userRemoveAllRecipientsByClickingX() {
+        pollPage.removingRecipients.click();
+    }
+
+    @Then("Verify the message {string} is displayed")
+    public void verifyTheMessageIsDisplayed(String arg0) {
+        Assert.assertTrue(pollPage.atLeastOnePersonMessage.isDisplayed());
+    }
 }
