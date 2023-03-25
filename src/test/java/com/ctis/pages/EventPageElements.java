@@ -34,7 +34,7 @@ public int hour, minute;
 
     @FindBy(name = "TIME_FROM_")
     public WebElement startTime;
-
+/*  the methods have written for that locaters
     @FindBy(xpath = "//input[@title='Hours']")
     public WebElement startclockHour;
 
@@ -46,6 +46,7 @@ public int hour, minute;
 
     @FindBy(xpath = "(//input[@title='Minutes'])[2]")
     public WebElement endclockMinutes;
+    */
     @FindBy(xpath = "//input[@value='Set Time']")
     public WebElement setstartTimeButton;
     @FindBy(xpath = "(//input[@value='Set Time'])[2]")
@@ -105,12 +106,15 @@ public int hour, minute;
     @FindBy(id = "blog-submit-button-cancel")
     public WebElement cancelButton;
 
+
+
+
+
     public void getGroupName(String groupName){
         this.groupName=groupName;
         String locater = groupName;
         Driver.getDriver().findElement(By.partialLinkText(locater)).click();
     }
-
 
     public void setStartTime(int hour, int minute){
         this.hour=hour;

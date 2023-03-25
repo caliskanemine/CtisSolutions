@@ -9,7 +9,7 @@ Feature:User use all Event functionality
     And user lands on the home page.
     When user click to event button
 
-  @first
+  @CTSL10-380
   Scenario Outline: User should be able to add Event start and ending date and time,
   select "All day" and specify the time zone.
     And user add new event start date as "<Starting date>"
@@ -26,7 +26,7 @@ Feature:User use all Event functionality
       | 17/07/2025    | 03/11/2025  | (UTC +03:00) Europe/Istanbul     |
       | 31/12/2023    | 01/01/2024  | (UTC +08:00) Australia/Perth     |
 
-  @second
+  @CTSL10-381
   Scenario Outline: User should be able to set reminder.
     And user click set reminder button
     Then user set remind count as 10
@@ -38,7 +38,7 @@ Feature:User use all Event functionality
       | hours   |
       | days    |
 
-  @third
+  @CTSL10-382
   Scenario Outline: User should be able to select event location from dropdown.
     Then user set event location as "<Location>"
     Examples:
@@ -48,7 +48,7 @@ Feature:User use all Event functionality
       | West Meeting Room         |
       | Product Owner Office Room |
 
-  @fourth
+  @CTSL10-383
   Scenario Outline: User should be able to add members by selecting
   contacts individually or adding groups and departments.
     Then user click members bar
@@ -57,16 +57,16 @@ Feature:User use all Event functionality
     Then user add "<groupname>" group
     Then user click All department and sub-department radiobutton about "<groupname>"
     Examples:
-      | Email                          | groupname |
-      | hr5@cybertekschool.com         | group15   |
-      | hr10@cybertekschool.com        | group15   |
-      | helpdesk20@cybertekschool.com  | Tester    |
-      | helpdesk30@cybertekschool.com  | group17   |
-      | marketing40@cybertekschool.com | Tester1   |
-      | marketing50@cybertekschool.com | Developer |
+      | Email                          | groupname    |
+      | hr99@cybertekschool.com        | group15      |
+      | hr10@cybertekschool.com        | group15      |
+      | helpdesk20@cybertekschool.com  | Tester       |
+      | helpdesk30@cybertekschool.com  | group17      |
+      | marketing40@cybertekschool.com | child for 16 |
+      | marketing50@cybertekschool.com | Developer    |
 
 
-  @fifth
+  @CTSL10-384
   Scenario Outline: User should be able to send message by filling the mandatory fields
     And user click event name bar
     Then user write "<event name>"
@@ -78,7 +78,7 @@ Feature:User use all Event functionality
       | Retro Meeting    |
 
 
-  @sixth
+  @CTSL10-385
   Scenario: User should be able to cancel sending event at any time before sending.
     And user click event name bar
     Then user write "event name"
@@ -100,8 +100,3 @@ Feature:User use all Event functionality
     Then user specify the time zone as "(UTC -07:00) America/Los_Angeles"
     Then user click all day radiobutton
     Then user cancel event
-
-
-
-
-
