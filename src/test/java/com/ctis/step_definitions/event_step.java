@@ -84,17 +84,17 @@ public class event_step {
         eventPageElements.remindercountButton.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + count);
     }
 
-    @Then("user set remind type")
-    public void user_set_remind_type() {
+    @Then("user set remind {string}")
+    public void user_set_remind_type(String type) {
 
         Select simpleDropdown = new Select(eventPageElements.remindertypeButton);
-        simpleDropdown.selectByVisibleText("days");
+        simpleDropdown.selectByVisibleText(type);
     }
 
 
     @Then("user set event location as {string}")
     public void user_set_event_location(String location) {
-        eventPageElements.eventlocationButton.sendKeys(location);
+        eventPageElements.eventlocationButton.sendKeys(location+Keys.ENTER);
     }
 
 

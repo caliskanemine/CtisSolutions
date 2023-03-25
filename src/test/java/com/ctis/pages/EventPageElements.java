@@ -74,7 +74,7 @@ public int hour, minute;
     @FindBy(name = "EVENT_REMIND_TYPE")
     public WebElement remindertypeButton;
 
-    @FindBy(id = "event-locationcal_3Jcl")
+    @FindBy(name = "EVENT_LOCATION")
     public WebElement eventlocationButton;
 
     @FindBy(xpath = "//a[@id='feed-event-dest-add-link']")
