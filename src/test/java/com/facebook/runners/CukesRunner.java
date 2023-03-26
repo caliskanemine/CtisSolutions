@@ -1,4 +1,4 @@
-package com.ctis.runners;
+package com.facebook.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"},
         features = "src/test/resources/features",
-        glue = "com/ctis/step_definitions",
+        glue = "com/facebook/step_definitions",
         dryRun = true,
-        tags = "@wip",
+        tags = "",
         publish = true
 )
 public class CukesRunner {
