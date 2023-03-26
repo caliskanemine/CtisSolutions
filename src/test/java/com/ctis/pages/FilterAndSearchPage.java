@@ -18,26 +18,34 @@ public class FilterAndSearchPage {
     @FindBy (xpath = "(//div[.='Last 60 days'])[6]")
     public WebElement days60;
 
+    @FindBy(xpath = "(//div[text()='Last week'])[6]")
+    public WebElement lastWeekDate;
+
+    @FindBy(xpath = "//span[.='Yesterday']")
+    public WebElement yesterdayDate;
+
     @FindBy(xpath = "(//span[.='Work'])[2]")
     //@FindBy(xpath = "//div[@data-id='work']")
     public WebElement workFilter;
 
-    @FindBy(xpath = "(//span[.='Favorites'])[2]")
+    @FindBy(xpath = "//span[.='Favorites']")
     public WebElement favoritesFilter;
 
-    @FindBy(xpath = "(//span[.='My Activity'])[2]")
+    @FindBy(xpath = "//span[.='My Activity']")
     public WebElement myActivityFilter;
 
-    @FindBy(xpath = "(//span[.='Announcements'])[2]")
+    @FindBy(xpath = "//span[.='Announcements']")
     public WebElement announcementsFilter;
 
-    @FindBy(xpath = "(//span[.='Workflows'])[2]")
+    @FindBy(xpath = "//span[.='Workflows']")
     public WebElement workFlowsFilter;
 
 
     @FindBy(xpath = "//span[.='Add field']")
     public WebElement addFieldButton;
 
+    @FindBy(xpath = "//span[.='Restore default fields']")
+    public WebElement restoreDefaultFields;
 
     @FindBy(xpath = "(//div[.='Date'])[2]")
     public WebElement dateFieldCheckBox;

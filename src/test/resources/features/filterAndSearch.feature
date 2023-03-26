@@ -1,3 +1,4 @@
+@abc
 Feature: Filter and search functionality
   As a user, I should be able to use "Filter and search" functionality on Active Stream.
 
@@ -8,15 +9,21 @@ Feature: Filter and search functionality
     Then clicks to the Log In button
     And user lands on the home page.
 
-  @abc
+
   Scenario: Verifying to see default filters
-    Given user lands on the home page.
     When user hover over and clicks the filter and search box
     Then user should be able to see default filters as my activity, work, favorite, announcements and workflows
 
   Scenario: Verify that user should be able to add and remove fields
     Given user hover over and clicks the filter and search box
-    When user clicks the add field button
+    When user clicks the Restore default fields button and add field button
+    And user sees Date, Type, Author and To fields checked, Favorites, Tag and Extranet fields unchecked as default
+    And user clicks to the Favorites, Tag and Extranet field checkboxes
+    And user sees all choosen fields' input boxes is displayed on the screen
+    Then user unclicks all field checkboxes and user sees all input boxes disappeared
+
+
+
 
 
 
