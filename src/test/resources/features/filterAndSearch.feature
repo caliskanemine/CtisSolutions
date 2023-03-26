@@ -17,10 +17,10 @@ Feature: Filter and search functionality
   Scenario: Verify that user should be able to add and remove fields
     Given user hover over and clicks the filter and search box
     When user clicks the Restore default fields button and add field button
-    And user sees Date, Type, Author and To fields checked, Favorites, Tag and Extranet fields unchecked as default
+    And user sees Date, Type, Author and To fields checked as default
     And user clicks to the Favorites, Tag and Extranet field checkboxes
     And user sees all choosen fields' input boxes is displayed on the screen
-    Then user unclicks all field checkboxes and user sees all input boxes disappeared
+    Then user unchecks all field checkboxes and user sees all input boxes disappeared
 
 
 

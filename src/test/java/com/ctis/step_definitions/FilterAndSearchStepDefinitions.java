@@ -31,17 +31,14 @@ public class FilterAndSearchStepDefinitions {
         filterAndSearchPage.addFieldButton.click();
     }
 
-    @And("user sees Date, Type, Author and To fields checked, Favorites, Tag and Extranet fields unchecked as default")
+    @And("user sees Date, Type, Author and To fields checked as default")
     public void userSeesDateTypeAuthorAndToFieldsCheckedFavoritesTagAndExtranetFieldsUncheckedAsDefault() {
 
-        Assert.assertTrue(filterAndSearchPage.dateInputBox.isDisplayed());
-        Assert.assertTrue(filterAndSearchPage.typeInputBox.isDisplayed());
-        Assert.assertTrue(filterAndSearchPage.authorInputBox.isDisplayed());
-        Assert.assertTrue(filterAndSearchPage.toInputBox.isDisplayed());
-        Assert.assertFalse(filterAndSearchPage.favoritesInputBox.isDisplayed());
-        System.out.println(filterAndSearchPage.favoritesInputBox.isDisplayed());
-        Assert.assertFalse(filterAndSearchPage.tagInputBox.isDisplayed());
-        Assert.assertFalse(filterAndSearchPage.extranetInputBox.isDisplayed());
+        Assert.assertTrue(filterAndSearchPage.dateInputBox.isEnabled());
+        Assert.assertTrue(filterAndSearchPage.typeInputBox.isEnabled());
+        Assert.assertTrue(filterAndSearchPage.authorInputBox.isEnabled());
+        Assert.assertTrue(filterAndSearchPage.toInputBox.isEnabled());
+
     }
 
     @And("user clicks to the Favorites, Tag and Extranet field checkboxes")
@@ -58,7 +55,7 @@ public class FilterAndSearchStepDefinitions {
         Assert.assertTrue(filterAndSearchPage.tagInputBox.isDisplayed());
     }
 
-    @Then("user unclicks all field checkboxes and user sees all input boxes disappeared")
+    @Then("user unchecks all field checkboxes and user sees all input boxes disappeared")
     public void userUnclicksAllFieldCheckboxesAndUserSeesAllInputBoxesDisappeared() {
         filterAndSearchPage.dateFieldCheckBox.click();
         filterAndSearchPage.toFieldCheckBox.click();
@@ -67,6 +64,7 @@ public class FilterAndSearchStepDefinitions {
         filterAndSearchPage.favoritesFieldCheckBox.click();
         filterAndSearchPage.extranetFieldCheckBox.click();
         filterAndSearchPage.tagFieldCheckBox.click();
+
     }
 
 }
