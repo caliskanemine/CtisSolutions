@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -31,17 +32,21 @@ public class InteractStepDefinitions {
         actions.click(interactPage.addComment).perform();
         actions.sendKeys(comment).perform();
 
-        interactPage.sendButton.click();
+        actions.moveToElement(interactPage.sendButton).perform();
+        actions.click(interactPage.sendButton).perform();
         BrowserUtils.sleep(2);
     }
     @When("User likes other employees' posts")
     public void user_likes_other_employees_posts() {
         interactPage.likeButton.click();
 
+
+
     }
     @Then("User unfollows other employees' posts")
     public void user_unfollows_other_employees_posts() {
         interactPage.unfollowButton.click();
+
 
     }
 

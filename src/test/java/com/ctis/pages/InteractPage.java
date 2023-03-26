@@ -18,10 +18,10 @@ public class InteractPage {
     @FindBy(xpath = "(//a[text()='Add comment'])[1]")
     public WebElement addComment;
 
-    @FindBy(xpath = "(//button[.='Send'])[1]")
+    @FindBy(xpath = "//button[contains(@id, 'lhe_button_submit_sonetCommentForm')]")
     public WebElement sendButton;
 
-    @FindBy(xpath ="(//div//a[@class='bx-ilike-text'])[1]")
+    @FindBy(xpath ="(//div//a[@class='bx-ilike-text'])[2]")
     public WebElement likeButton;
 
 
@@ -32,7 +32,7 @@ public class InteractPage {
     public WebElement userComment;
 
 
-    @FindBy(xpath = "//div[@class='feed-post-emoji-text-box feed-post-emoji-move-to-right']")
+    @FindBy(xpath = "//div[contains(@id, 'bx-ilike-top-users-BLOG_POST_227')]")
     public WebElement likeSign;
 
     @FindBy(xpath = "(//a[text()='Follow'])[1]")
