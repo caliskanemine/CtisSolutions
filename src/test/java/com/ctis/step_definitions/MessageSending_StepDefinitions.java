@@ -96,29 +96,14 @@ public class MessageSending_StepDefinitions {
     @Then("verifies that the unsended message is not displayed on the Activity Stream")
     public void verifies_that_the_unsended_message_is_not_displayed_on_the_activity_stream() {
 
-
-        isMessageDisplayed= Driver.getDriver().findElement(By.xpath("//div[contains(text(), 'Do not send this message')]"));
-
-        if (isMessageDisplayed.getText()!="Test by abdullah"){
-            Assert.assertTrue(true);
-        }else
+        WebElement a=Driver.getDriver().findElement(By.xpath("//div[text()= 'Do not send this message']"));
+        if (a.isEnabled()){
             Assert.assertTrue(false);
+        }else
+            Assert.assertTrue(true);
 
-        /*
-        BrowserUtils.waitFor(2);
-        String locationOfMessage2 = "//div[contains(text(), 'Do not send this message')]";
-        WebElement isMessageDisplayed2 = null;
-        try {
-            isMessageDisplayed2 = Driver.getDriver().findElement
-                    (By.xpath(locationOfMessage2));
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
-        System.out.println(isMessageDisplayed2.getText());
-       // Assert.assertFalse("asdasda",isMessageDisplayed2.isEnabled());
 
-         */
+
     }
 
 
