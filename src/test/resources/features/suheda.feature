@@ -1,7 +1,10 @@
 Feature: facebook
 
   Background: login
-    Given user is logged in
+
+    @wip
+    Scenario: login
+      Given user is logged in
 
     Scenario: Verify that the user can see the notification tab on the Facebook homepage.
 

@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"},
         features = "src/test/resources/features",
         glue = "com/facebook/step_definitions",
-        dryRun = true,
-        tags = "",
+        dryRun = false,
+        tags = "@wip",
         publish = true
 )
 public class CukesRunner {
