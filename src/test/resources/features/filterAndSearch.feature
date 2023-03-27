@@ -9,7 +9,6 @@ Feature: Filter and search functionality
     Then clicks to the Log In button
     And user lands on the home page.
 
-
   Scenario: Verifying to see default filters
     When user hover over and clicks the filter and search box
     Then user should be able to see default filters as my activity, work, favorite, announcements and workflows
@@ -22,12 +21,32 @@ Feature: Filter and search functionality
     And user sees all choosen fields' input boxes is displayed on the screen
     Then user unchecks all field checkboxes and user sees all input boxes disappeared
 
+  Scenario: Verify that user should be able to search by specifying the date.
+    Given user hover over and clicks the filter and search box
+    When user clicks to the date box and specific dates appears
+    And user chooses the Exact Date as an option
+    And a new date input box appears and user clicks the date icon
+    And user chooses "07/01/2023" as exact date
+    Then user clicks the search button
+
+  Scenario: Verify that user should be able to search by selecting single type.
+    Given user hover over and clicks the filter and search box
+    When user clicks to the type box and specific types appears
+    And user chooses Polls as a single option
+    Then user clicks the search button
+
+  Scenario: Verify that user should be able to search by selecting multiple types.
+    Given user hover over and clicks the filter and search box
+    When user clicks to the type box and specific types appears
+    And user chooses Posts, Announcements and Appreciations as multiple options
+    Then user clicks the search button
 
 
-
-
-
-
+  Scenario: Verify that user should be able to search by selecting multiple types.
+    Given user hover over and clicks the filter and search box
+    When user clicks to the type box and specific types appears
+    And user chooses Posts, Announcements and Appreciations as multiple options
+    Then user clicks the search button
 
 
     #1. User should be able to see default filters as "my activity, work, favorite, announcements, and workflows".
