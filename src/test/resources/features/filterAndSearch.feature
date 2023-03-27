@@ -29,6 +29,7 @@ Feature: Filter and search functionality
 
 
 
+
     #1. User should be able to see default filters as "my activity, work, favorite, announcements, and workflows".
     #2. User should be able to add and remove fields.
     #3. User should be able to search by specifying the Date.
