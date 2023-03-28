@@ -96,6 +96,23 @@ public class FilterAndSearchPage {
     public WebElement extranetInputBox;
 
 
+    @FindBy(xpath = "(//div[.='Exact date'])[2]")
+    public WebElement exactDate;
+
+    @FindBy (xpath = "//span[@class='main-ui-date-button']")
+    public WebElement exactDateIcon;
+
+    @FindBy (xpath = "(//a[.='28'])[2]")
+    public WebElement choosenDate;
+
+    @FindBy (xpath = "//button[@class='ui-btn ui-btn-primary ui-btn-icon-search main-ui-filter-field-button  main-ui-filter-find']")
+    public WebElement searchButton;
+
+
+
+
+
+
 
 
 

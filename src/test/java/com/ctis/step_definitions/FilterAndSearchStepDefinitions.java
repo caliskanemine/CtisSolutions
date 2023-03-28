@@ -1,10 +1,13 @@
 package com.ctis.step_definitions;
 
 import com.ctis.pages.FilterAndSearchPage;
+import com.ctis.utilities.BrowserUtils;
+import com.ctis.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 
 public class FilterAndSearchStepDefinitions {
 
@@ -65,33 +68,39 @@ public class FilterAndSearchStepDefinitions {
         filterAndSearchPage.tagFieldCheckBox.click();
     }
 
+    @When("user clicks to the Restore default fields button")
+    public void user_clicks_to_the_restore_default_fields_button() {
+        filterAndSearchPage.restoreDefaultFields.click();
+    }
+
     @When("user clicks to the date box and specific dates appears")
     public void user_clicks_to_the_date_box_and_specific_dates_appears() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        filterAndSearchPage.dateInputBox.click();
     }
 
     @When("user chooses the Exact Date as an option")
     public void user_chooses_the_exact_date_as_an_option() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(filterAndSearchPage.exactDate).perform();
+        filterAndSearchPage.exactDate.click();
+
     }
 
     @When("a new date input box appears and user clicks to the date icon inside the new date input box")
     public void a_new_date_input_box_appears_and_user_clicks_to_the_date_icon_inside_the_new_date_input_box() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(filterAndSearchPage.exactDateIcon).perform();
+        filterAndSearchPage.exactDateIcon.click();
     }
 
-    @And("user chooses {string} as exact date")
-    public void userChoosesAsExactDate(int arg0, int arg1, int arg2) {
-
+    @And("user chooses a random date as exact date")
+    public void userChoosesADateAsExactDate() {
+        filterAndSearchPage.choosenDate.click();
     }
 
     @Then("user clicks the search button")
     public void user_clicks_the_search_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       filterAndSearchPage.searchButton.click();
     }
 
     @When("user clicks to the type box and specific types appears")
@@ -160,11 +169,7 @@ public class FilterAndSearchStepDefinitions {
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("user clicks to the Restore default fields button")
-    public void user_clicks_to_the_restore_default_fields_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
 
     @Then("user should see Date, Type, Author and To fields checked and Favorites, Tag, Extranet fields unchecked as default")
     public void user_should_see_date_type_author_and_to_fields_checked_and_favorites_tag_extranet_fields_unchecked_as_default() {
@@ -177,6 +182,7 @@ public class FilterAndSearchStepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
 
 
 }

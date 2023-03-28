@@ -27,10 +27,11 @@ Feature: Filter and search functionality
 
   Scenario: Verify that user should be able to search by specifying the date.
     Given user hover over and clicks the filter and search box
+    When user clicks to the Restore default fields button
     When user clicks to the date box and specific dates appears
     And user chooses the Exact Date as an option
     And a new date input box appears and user clicks to the date icon inside the new date input box
-    And user chooses '07/01/2023' as exact date
+    And user chooses a random date as exact date
     Then user clicks the search button
 
 
