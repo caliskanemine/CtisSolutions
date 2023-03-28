@@ -34,7 +34,7 @@ Feature: Filter and search functionality
     And user chooses a random date
     Then user clicks the search button
 
-
+  @now
   Scenario: Verify that user should be able to search by selecting single type.
     Given user hover over and clicks the filter and search box
     When user clicks to the Restore default fields button
@@ -43,10 +43,10 @@ Feature: Filter and search functionality
     And user should see Polls type inside the type input box
     Then user clicks the search button
 
-
+  @now
   Scenario: Verify that user should be able to search by selecting multiple types.
     Given user hover over and clicks the filter and search box
-    When user clicks to the Restore default fields button
+    When user clicks to the type input box clear button
     When user clicks to the type box and specific types appears
     And user chooses Posts, Announcements and Appreciations as multiple options
     And user should see Posts, Announcements and Appreciations types inside the type input box
@@ -56,9 +56,9 @@ Feature: Filter and search functionality
   Scenario: Verify that user should be able to save the filter.
     Given user hover over and clicks the filter and search box
     When user clicks to the save filter button
-    And user gives name of the filter as My Filter
+    And user gives name of the filter as "My Filter"
     And user clicks to the Save button
-    Then user should see the My Filter as filter name under the filters menu
+    Then user should see the "My Filter" as filter name under the filters menu
 
 
   Scenario: Verify that user should be able to restore the default field.

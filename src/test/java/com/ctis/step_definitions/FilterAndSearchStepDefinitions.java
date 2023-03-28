@@ -4,9 +4,12 @@ import com.ctis.pages.FilterAndSearchPage;
 import com.ctis.utilities.BrowserUtils;
 import com.ctis.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
 public class FilterAndSearchStepDefinitions {
@@ -16,6 +19,7 @@ public class FilterAndSearchStepDefinitions {
     @When("user hover over and clicks the filter and search box")
     public void userHoverOverAndClicksTheFilterAndSearchBox() {
         filterAndSearchPage.filterAndSearchBox.click();
+        BrowserUtils.waitFor(1);
     }
 
     @Then("user should be able to see default filters as my activity, work, favorite, announcements and workflows")
@@ -70,7 +74,9 @@ public class FilterAndSearchStepDefinitions {
 
     @When("user clicks to the Restore default fields button")
     public void user_clicks_to_the_restore_default_fields_button() {
+        BrowserUtils.waitForClickablility(filterAndSearchPage.restoreDefaultFields, 1);
         filterAndSearchPage.restoreDefaultFields.click();
+        BrowserUtils.waitFor(1);
     }
 
     @When("user clicks to the date box and specific dates appears")
@@ -117,40 +123,63 @@ public class FilterAndSearchStepDefinitions {
        Assert.assertTrue(filterAndSearchPage.pollsInTypeInputBox.isDisplayed());
     }
 
+    @When("user clicks to the type input box clear button")
+    public void userClicksToTheTypeInputBoxClearButton() {
+        filterAndSearchPage.typeInputBox.click();
+        //filterAndSearchPage.typeInputBoxClearButton.click();
+        //BrowserUtils.waitFor(2);
+
+    }
+
     @When("user chooses Posts, Announcements and Appreciations as multiple options")
     public void user_chooses_posts_announcements_and_appreciations_as_multiple_options() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        //filterAndSearchPage.restoreDefaultFields.click();
+        //filterAndSearchPage.typeInputBox2.click();
+        /*
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", filterAndSearchPage.postsCheckBox);
+        js.executeScript("arguments[0].click();", filterAndSearchPage.announcementsCheckBox3);
+        js.executeScript("arguments[0].click();", filterAndSearchPage.appreciationsCheckBox3);
+        */
+
+        filterAndSearchPage.postsCheckBox.click();
+        BrowserUtils.sleep(1);
+        filterAndSearchPage.announcementsCheckBox3.click();
+        BrowserUtils.sleep(1);
+        filterAndSearchPage.appreciationsCheckBox3.click();
+
+
+
+
     }
 
     @When("user should see Posts, Announcements and Appreciations types inside the type input box")
     public void user_should_see_posts_announcements_and_appreciations_types_inside_the_type_input_box() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(filterAndSearchPage.postsInTypeInputBox.isDisplayed());
+        Assert.assertTrue(filterAndSearchPage.announcementsInTypeInputBox.isDisplayed());
+        Assert.assertTrue(filterAndSearchPage.appreciationsInTypeInputBox.isDisplayed());
     }
 
     @When("user clicks to the save filter button")
     public void user_clicks_to_the_save_filter_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        filterAndSearchPage.saveFilterButton.click();
     }
 
-    @When("user gives name of the filter as My Filter")
-    public void user_gives_name_of_the_filter_as_my_filter() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @And("user gives name of the filter as {string}")
+    public void userGivesNameOfTheFilterAs(String filterName) {
+        filterAndSearchPage.filterNameInputBox.sendKeys(filterName);
     }
 
     @When("user clicks to the Save button")
     public void user_clicks_to_the_save_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       filterAndSearchPage.saveButton.click();
     }
 
-    @Then("user should see the My Filter as filter name under the filters menu")
-    public void user_should_see_the_my_filter_as_filter_name_under_the_filters_menu() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("user should see the {string} as filter name under the filters menu")
+    public void userShouldSeeTheAsFilterNameUnderTheFiltersMenu(String filterName) {
+
+
     }
 
     @When("user clicks to the add field button")
@@ -172,6 +201,7 @@ public class FilterAndSearchStepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
+
 
 
 

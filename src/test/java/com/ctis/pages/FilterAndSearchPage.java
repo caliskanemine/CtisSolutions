@@ -109,6 +109,9 @@ public class FilterAndSearchPage {
     public WebElement searchButton;
 
 
+    @FindBy(xpath = "//div[@data-name='EVENT_ID'][@class='main-ui-control main-ui-multi-select']")
+    public WebElement typeInputBox2;
+
     @FindBy(xpath = "//div[.='Polls']")
     public WebElement pollsCheckBox;
 
@@ -116,13 +119,52 @@ public class FilterAndSearchPage {
     public WebElement pollsInTypeInputBox;
 
 
+    @FindBy(xpath = "//div[.='Posts']")
+    public WebElement postsCheckBox;
+
+    @FindBy(xpath = "//span[.='Posts']")
+    public WebElement postsInTypeInputBox;
+
+    @FindBy(xpath = "(//div[.='Announcements'])[13]")
+    public WebElement announcementsCheckBox;
+
+    @FindBy(xpath = "//div[contains(@data-item, 'Announcements')]//div[.='Announcements']")
+    public WebElement announcementsCheckBox2;
+
+    @FindBy(xpath = "//div[@class='main-ui-select-inner-label'][normalize-space()='Announcements']")
+    public WebElement announcementsCheckBox3;
+
+    @FindBy(xpath = "(//span[.='Announcements'])[3]")
+    public WebElement announcementsInTypeInputBox;
 
 
 
+    @FindBy(xpath = "(//div[.='Appreciations'])[12]")
+    public WebElement appreciationsCheckBox;
 
+    @FindBy(xpath = "//div[contains(text(),'Appreciations')]")
+    public WebElement appreciationsCheckBox2;
 
+    @FindBy(xpath = "//div[contains(@data-item, 'Appreciations')]//div[.='Appreciations']")
+    public WebElement appreciationsCheckBox3;
 
+    @FindBy(xpath = "(//span[.='Appreciations'])[2]")
+    public WebElement appreciationsInTypeInputBox;
 
+    @FindBy(id = "LIVEFEED_search")
+    public WebElement filterAndSearchBoxClearButton;
+
+    @FindBy(xpath = "//div[@class='main-ui-control-value-delete-item']")
+    public WebElement typeInputBoxClearButton;
+
+    @FindBy(xpath = "//span[.='Save filter']")
+    public WebElement saveFilterButton;
+
+    @FindBy(xpath = "//input[@placeholder='Filter name']")
+    public WebElement filterNameInputBox;
+
+    @FindBy(xpath = "//span[@class='ui-btn ui-btn-success main-ui-filter-field-button main-ui-filter-save']")
+    public WebElement saveButton;
 
 
 }
