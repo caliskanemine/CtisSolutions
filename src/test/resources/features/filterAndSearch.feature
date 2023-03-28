@@ -30,25 +30,27 @@ Feature: Filter and search functionality
     When user clicks to the Restore default fields button
     When user clicks to the date box and specific dates appears
     And user chooses the Exact Date as an option
-    And a new date input box appears and user clicks to the date icon inside the new date input box
-    And user chooses a random date as exact date
+    And a new date input box appears and user clicks to this input box
+    And user chooses a random date
     Then user clicks the search button
 
 
   Scenario: Verify that user should be able to search by selecting single type.
     Given user hover over and clicks the filter and search box
+    When user clicks to the Restore default fields button
     When user clicks to the type box and specific types appears
     And user chooses Polls as a single option
     And user should see Polls type inside the type input box
-    Then user clicks to the search button
+    Then user clicks the search button
 
 
   Scenario: Verify that user should be able to search by selecting multiple types.
     Given user hover over and clicks the filter and search box
+    When user clicks to the Restore default fields button
     When user clicks to the type box and specific types appears
     And user chooses Posts, Announcements and Appreciations as multiple options
     And user should see Posts, Announcements and Appreciations types inside the type input box
-    Then user clicks to the search button
+    Then user clicks the search button
 
 
   Scenario: Verify that user should be able to save the filter.

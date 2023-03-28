@@ -83,48 +83,38 @@ public class FilterAndSearchStepDefinitions {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(filterAndSearchPage.exactDate).perform();
         filterAndSearchPage.exactDate.click();
-
     }
 
-    @When("a new date input box appears and user clicks to the date icon inside the new date input box")
-    public void a_new_date_input_box_appears_and_user_clicks_to_the_date_icon_inside_the_new_date_input_box() {
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(filterAndSearchPage.exactDateIcon).perform();
-        filterAndSearchPage.exactDateIcon.click();
+    @When("a new date input box appears and user clicks to this input box")
+    public void a_new_date_input_box_appears_and_user_clicks_to_this_input_box() {
+        filterAndSearchPage.secondDateInputBox.click();
     }
 
-    @And("user chooses a random date as exact date")
-    public void userChoosesADateAsExactDate() {
+    @And("user chooses a random date")
+    public void userChoosesARandomDate() {
         filterAndSearchPage.choosenDate.click();
+
     }
 
     @Then("user clicks the search button")
     public void user_clicks_the_search_button() {
+        BrowserUtils.waitForVisibility(filterAndSearchPage.searchButton, 1);
        filterAndSearchPage.searchButton.click();
     }
 
     @When("user clicks to the type box and specific types appears")
     public void user_clicks_to_the_type_box_and_specific_types_appears() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       filterAndSearchPage.typeInputBox.click();
     }
 
     @When("user chooses Polls as a single option")
     public void user_chooses_polls_as_a_single_option() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        filterAndSearchPage.pollsCheckBox.click();
     }
 
     @When("user should see Polls type inside the type input box")
     public void user_should_see_polls_type_inside_the_type_input_box() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Then("user clicks to the search button")
-    public void user_clicks_to_the_search_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+       Assert.assertTrue(filterAndSearchPage.pollsInTypeInputBox.isDisplayed());
     }
 
     @When("user chooses Posts, Announcements and Appreciations as multiple options")

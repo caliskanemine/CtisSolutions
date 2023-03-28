@@ -99,14 +99,21 @@ public class FilterAndSearchPage {
     @FindBy(xpath = "(//div[.='Exact date'])[2]")
     public WebElement exactDate;
 
-    @FindBy (xpath = "//span[@class='main-ui-date-button']")
-    public WebElement exactDateIcon;
+    @FindBy (xpath = "//input[@name='DATE_CREATE_from']")
+    public WebElement secondDateInputBox;
 
     @FindBy (xpath = "(//a[.='28'])[2]")
     public WebElement choosenDate;
 
-    @FindBy (xpath = "//button[@class='ui-btn ui-btn-primary ui-btn-icon-search main-ui-filter-field-button  main-ui-filter-find']")
+    @FindBy (xpath = "//button[@class='ui-btn ui-btn-primary ui-btn-icon-search main-ui-filter-field-button main-ui-filter-find']")
     public WebElement searchButton;
+
+
+    @FindBy(xpath = "//div[.='Polls']")
+    public WebElement pollsCheckBox;
+
+    @FindBy(xpath = "//span[.='Polls']")
+    public WebElement pollsInTypeInputBox;
 
 
 
