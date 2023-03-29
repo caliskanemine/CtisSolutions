@@ -1,4 +1,4 @@
-@abc
+@wip
 Feature: Filter and search functionality
   As a user, I should be able to use "Filter and search" functionality on Active Stream.
 
@@ -34,20 +34,21 @@ Feature: Filter and search functionality
     And user chooses a random date
     Then user clicks the search button
 
-  @now
+
   Scenario: Verify that user should be able to search by selecting single type.
     Given user hover over and clicks the filter and search box
-    When user clicks to the Restore default fields button
+    Given user clicks to the Restore default fields button
     When user clicks to the type box and specific types appears
     And user chooses Polls as a single option
     And user should see Polls type inside the type input box
     Then user clicks the search button
 
-  @now
+
   Scenario: Verify that user should be able to search by selecting multiple types.
     Given user hover over and clicks the filter and search box
-    When user clicks to the type input box clear button
-    When user clicks to the type box and specific types appears
+    When user clicks to the type input box delete button
+    And user clicks to the Restore default fields button
+    And user clicks to the type box and specific types appears
     And user chooses Posts, Announcements and Appreciations as multiple options
     And user should see Posts, Announcements and Appreciations types inside the type input box
     Then user clicks the search button
@@ -56,9 +57,9 @@ Feature: Filter and search functionality
   Scenario: Verify that user should be able to save the filter.
     Given user hover over and clicks the filter and search box
     When user clicks to the save filter button
-    And user gives name of the filter as "My Filter"
+    And user gives name of the filter as "MY FILTER"
     And user clicks to the Save button
-    Then user should see the "My Filter" as filter name under the filters menu
+    Then user should see the "MY FILTER" as filter name under the filters menu
 
 
   Scenario: Verify that user should be able to restore the default field.
@@ -74,6 +75,7 @@ Feature: Filter and search functionality
     When user clicks to the add field button
     And user clicks to the Favorites, Tag and Extranet field checkboxes
     And user clicks to the Reset Button
+    And user hover over and clicks the filter and search box
     Then user should see Date, Type, Author and To fields checked and Favorites, Tag, Extranet fields unchecked as default
 
 

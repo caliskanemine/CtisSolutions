@@ -12,6 +12,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
+import java.security.Key;
+
 public class FilterAndSearchStepDefinitions {
 
     FilterAndSearchPage filterAndSearchPage = new FilterAndSearchPage();
@@ -19,7 +21,7 @@ public class FilterAndSearchStepDefinitions {
     @When("user hover over and clicks the filter and search box")
     public void userHoverOverAndClicksTheFilterAndSearchBox() {
         filterAndSearchPage.filterAndSearchBox.click();
-        BrowserUtils.waitFor(1);
+        BrowserUtils.sleep(2);
     }
 
     @Then("user should be able to see default filters as my activity, work, favorite, announcements and workflows")
@@ -39,12 +41,10 @@ public class FilterAndSearchStepDefinitions {
 
     @And("user sees Date, Type, Author and To fields checked as default")
     public void userSeesDateTypeAuthorAndToFieldsCheckedFavoritesTagAndExtranetFieldsUncheckedAsDefault() {
-
         Assert.assertTrue(filterAndSearchPage.dateInputBox.isEnabled());
         Assert.assertTrue(filterAndSearchPage.typeInputBox.isEnabled());
         Assert.assertTrue(filterAndSearchPage.authorInputBox.isEnabled());
         Assert.assertTrue(filterAndSearchPage.toInputBox.isEnabled());
-
     }
 
     @And("user clicks to the Favorites, Tag and Extranet field checkboxes")
@@ -62,7 +62,7 @@ public class FilterAndSearchStepDefinitions {
     }
 
     @Then("user unchecks all field checkboxes and user sees all input boxes disappeared")
-    public void userUnclicksAllFieldCheckboxesAndUserSeesAllInputBoxesDisappeared() {
+    public void userUnchecksAllFieldCheckboxesAndUserSeesAllInputBoxesDisappeared() {
         filterAndSearchPage.dateFieldCheckBox.click();
         filterAndSearchPage.toFieldCheckBox.click();
         filterAndSearchPage.authorFieldCheckBox.click();
@@ -74,9 +74,8 @@ public class FilterAndSearchStepDefinitions {
 
     @When("user clicks to the Restore default fields button")
     public void user_clicks_to_the_restore_default_fields_button() {
-        BrowserUtils.waitForClickablility(filterAndSearchPage.restoreDefaultFields, 1);
         filterAndSearchPage.restoreDefaultFields.click();
-        BrowserUtils.waitFor(1);
+        BrowserUtils.sleep(2);
     }
 
     @When("user clicks to the date box and specific dates appears")
@@ -99,18 +98,17 @@ public class FilterAndSearchStepDefinitions {
     @And("user chooses a random date")
     public void userChoosesARandomDate() {
         filterAndSearchPage.choosenDate.click();
-
     }
 
     @Then("user clicks the search button")
     public void user_clicks_the_search_button() {
         BrowserUtils.waitForVisibility(filterAndSearchPage.searchButton, 1);
-       filterAndSearchPage.searchButton.click();
+        filterAndSearchPage.searchButton.click();
     }
 
     @When("user clicks to the type box and specific types appears")
     public void user_clicks_to_the_type_box_and_specific_types_appears() {
-       filterAndSearchPage.typeInputBox.click();
+       filterAndSearchPage.typeInputBox2.click();
     }
 
     @When("user chooses Polls as a single option")
@@ -123,35 +121,19 @@ public class FilterAndSearchStepDefinitions {
        Assert.assertTrue(filterAndSearchPage.pollsInTypeInputBox.isDisplayed());
     }
 
-    @When("user clicks to the type input box clear button")
-    public void userClicksToTheTypeInputBoxClearButton() {
-        filterAndSearchPage.typeInputBox.click();
-        //filterAndSearchPage.typeInputBoxClearButton.click();
-        //BrowserUtils.waitFor(2);
-
+    @When("user clicks to the type input box delete button")
+    public void userClicksToTheTypeInputBoxDeleteButton() {
+        filterAndSearchPage.typeInputBoxDeleteButton.click();
+        BrowserUtils.waitFor(2);
     }
 
     @When("user chooses Posts, Announcements and Appreciations as multiple options")
     public void user_chooses_posts_announcements_and_appreciations_as_multiple_options() {
-
-        //filterAndSearchPage.restoreDefaultFields.click();
-        //filterAndSearchPage.typeInputBox2.click();
-        /*
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();", filterAndSearchPage.postsCheckBox);
-        js.executeScript("arguments[0].click();", filterAndSearchPage.announcementsCheckBox3);
-        js.executeScript("arguments[0].click();", filterAndSearchPage.appreciationsCheckBox3);
-        */
-
         filterAndSearchPage.postsCheckBox.click();
         BrowserUtils.sleep(1);
-        filterAndSearchPage.announcementsCheckBox3.click();
+        filterAndSearchPage.announcementsCheckBox.click();
         BrowserUtils.sleep(1);
-        filterAndSearchPage.appreciationsCheckBox3.click();
-
-
-
-
+        filterAndSearchPage.appreciationsCheckBox.click();
     }
 
     @When("user should see Posts, Announcements and Appreciations types inside the type input box")
@@ -164,11 +146,12 @@ public class FilterAndSearchStepDefinitions {
     @When("user clicks to the save filter button")
     public void user_clicks_to_the_save_filter_button() {
         filterAndSearchPage.saveFilterButton.click();
+        BrowserUtils.waitFor(1);
     }
 
     @And("user gives name of the filter as {string}")
-    public void userGivesNameOfTheFilterAs(String filterName) {
-        filterAndSearchPage.filterNameInputBox.sendKeys(filterName);
+    public void userGivesNameOfTheFilterAs(String name) {
+        filterAndSearchPage.filterNameInputBox.sendKeys(name);
     }
 
     @When("user clicks to the Save button")
@@ -177,32 +160,35 @@ public class FilterAndSearchStepDefinitions {
     }
 
     @Then("user should see the {string} as filter name under the filters menu")
-    public void userShouldSeeTheAsFilterNameUnderTheFiltersMenu(String filterName) {
-
-
+    public void userShouldSeeTheAsFilterNameUnderTheFiltersMenu(String name) {
+        String expectedText = name;
+        String actualText = filterAndSearchPage.filterNameDisplay.getText();
+        Assert.assertEquals(expectedText, actualText);
+        Assert.assertTrue(filterAndSearchPage.filterNameDisplay.isDisplayed());
     }
 
     @When("user clicks to the add field button")
     public void user_clicks_to_the_add_field_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        filterAndSearchPage.addFieldButton.click();
     }
-
-
 
     @Then("user should see Date, Type, Author and To fields checked and Favorites, Tag, Extranet fields unchecked as default")
     public void user_should_see_date_type_author_and_to_fields_checked_and_favorites_tag_extranet_fields_unchecked_as_default() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(filterAndSearchPage.dateInputBox.isEnabled());
+        Assert.assertTrue(filterAndSearchPage.typeInputBox.isEnabled());
+        Assert.assertTrue(filterAndSearchPage.authorInputBox.isEnabled());
+        Assert.assertTrue(filterAndSearchPage.toInputBox.isEnabled());
+
+        Assert.assertFalse(filterAndSearchPage.favoritesFieldCheckBox.isSelected());
+        Assert.assertFalse(filterAndSearchPage.tagFieldCheckBox.isSelected());
+        Assert.assertFalse(filterAndSearchPage.extranetFieldCheckBox.isSelected());
     }
 
     @When("user clicks to the Reset Button")
     public void user_clicks_to_the_reset_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        filterAndSearchPage.resetButton.click();
+        BrowserUtils.waitForClickablility(filterAndSearchPage.filterAndSearchBox, 5);
     }
-
-
 
 
 }
