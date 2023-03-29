@@ -1,4 +1,4 @@
-@wip
+@Halit
 Feature:User use all Event functionality
 
   Background: Verify user type 'Human Resource ' can login
