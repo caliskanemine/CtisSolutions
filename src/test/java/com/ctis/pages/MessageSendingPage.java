@@ -1,15 +1,13 @@
 package com.ctis.pages;
 
-import com.ctis.step_definitions.MessageSending_StepDefinitions;
 import com.ctis.utilities.Driver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MessagePage {
+public class MessageSendingPage {
 
-    public MessagePage(){
+    public MessageSendingPage(){
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
