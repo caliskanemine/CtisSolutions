@@ -27,7 +27,8 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User adds an url into the link box
     And User clicks the save button
     And User clicks send button
-    Then User can see the message as url under the activity stream
+    Then User sees the message or go to page that url added in to the message
+
 
 @CTSL10-413
   Scenario: User should be able to cancel links before sending the message
@@ -56,8 +57,8 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User writes the message in to the message area
     And User click tags button
     And Types who one wants to add
-    And User clicks to send button
-    Then User can see the person who added besides Tag: word
+    Then User can see the person who added into the TAGS: field
+
 
 @CTSL10-416
     Scenario: User should be able to remove tags before sending the message

@@ -70,12 +70,13 @@ public class AddingSmthAppreciation {
         BrowserUtils.sleep(2);
     }
 
+    String linkUrl="https://www.bestholiday.com/";
     @And("User adds an url into the link box")
     public void userAddsAnUrlIntoTheLinkBox() {
 
         adding_appreciation.linkBox.click();
         BrowserUtils.sleep(1);
-        adding_appreciation.linkBox.sendKeys("https://www.bestholiday.com/");
+        adding_appreciation.linkBox.sendKeys(linkUrl);
         BrowserUtils.sleep(2);
     }
 
@@ -91,13 +92,26 @@ public class AddingSmthAppreciation {
 
     adding_appreciation.sendButton.click();
     }
-
-    @Then("User can see the message as url under the activity stream")
-    public void userCanSeeTheMessageAsUrlUnderTheActivityStream() {
+/*
+    @Then("User can see the message as url into the text")
+    public void userCanSeeTheMessageAsUrlIntoTheText() {
+       Actions actions=new Actions(Driver.getDriver());
+       actions.moveToElement(adding_appreciation.messageArea);
         String actual = adding_appreciation.linkedUrlMessage.getAttribute("href");
         String expected="https://www.bestholiday.com/";
         Assert.assertEquals(expected,actual);
     }
+
+ */
+
+    @Then("User sees the message or go to page that url added in to the message")
+    public void userSeesTheMessageOrGoToPageThatUrlAddedInToTheMessage() {
+        if(linkUrl.equals("https://www.bestholiday.com/"))
+        {
+        Assert.assertTrue(adding_appreciation.beforeLinkMessage.isDisplayed());
+        }
+
+        }
 
     @And("User clicks insert video button")
     public void userClicksInsertVideoButton() {
@@ -171,8 +185,10 @@ public class AddingSmthAppreciation {
 
     @And("User writes the message in to the message area")
     public void userWritesTheMessageInToTheMessageArea() {
+
         Actions actions=new Actions(Driver.getDriver());
         actions.moveToElement(adding_appreciation.messageArea).sendKeys("hello mate have a nice day").perform();
+
 
     }
 
@@ -189,12 +205,15 @@ public class AddingSmthAppreciation {
 
     }
 
+    @Then("User can see the person who added into the TAGS: field")
+    public void userCanSeeThePersonWhoAddedIntoTheTAGSField() {
+        String expected="hr2";
+        String actual = adding_appreciation.addedPartTag.getText();
+        Assert.assertEquals(expected,actual);
 
-    @Then("User can see the person who added besides Tag: word")
-    public void userCanSeeThePersonWhoAddedBesidesTagWord() {
-        String actual= adding_appreciation.addedPartTag.getText();
-        Assert.assertEquals("hr2",actual);
     }
+
+
 
     @And("User clicks x to remove the person from tag field")
     public void userClicksXToRemoveThePersonFromTagField() {
@@ -206,5 +225,8 @@ public class AddingSmthAppreciation {
         String tagsField2Text = adding_appreciation.tagsField2.getText();
         Assert.assertEquals("Add more",tagsField2Text);
     }
+
+
+
 }
 

@@ -43,13 +43,14 @@ public class Adding_Appreciation {
     @FindBy(xpath = "//input[@value='Save']")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//body//a[text()='hr1 cong']")
-    public WebElement linkedMessage;
+
+    @FindBy(xpath ="//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div/span[2]" )
+    public WebElement beforeLinkMessage;
 
     @FindBy(id="blog-submit-button-save")
     public WebElement sendButton;
 
-    @FindBy(xpath = "(//div//a[@href='https://www.bestholiday.com/'])[1]")
+    @FindBy(xpath = "//html//body/a")
     public WebElement linkedUrlMessage;
 
     @FindBy(xpath = "//span[@title='Insert video']")
@@ -74,7 +75,8 @@ public class Adding_Appreciation {
     public WebElement tagsField;
 
 
-     @FindBy(xpath = "//*[@id=\"blogpost-tags-258\"]/a")
+
+     @FindBy(xpath = "//span[@class='feed-add-post-tags']")
     public WebElement addedPartTag;
 
 
@@ -83,4 +85,6 @@ public class Adding_Appreciation {
 
      @FindBy(xpath = "//*[@id=\"post-tags-add-new-blogPostForm\"]")
     public WebElement tagsField2;
+
+
 }
