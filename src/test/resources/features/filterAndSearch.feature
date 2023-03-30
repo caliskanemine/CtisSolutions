@@ -1,4 +1,4 @@
-@wip
+@CTSL10-300
 Feature: Filter and search functionality
   As a user, I should be able to use "Filter and search" functionality on Active Stream.
 
