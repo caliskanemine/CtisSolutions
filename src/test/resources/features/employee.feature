@@ -8,6 +8,7 @@ Feature: Default
     And user lands on the home page.
     When user should click Employee tab
 
+
   @CTSL10-388
   Scenario:Verify all user types should be able to display company structure
     Then user should see Company Structure tab
