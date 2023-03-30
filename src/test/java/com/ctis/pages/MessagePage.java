@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MessagePage {
 
-//deneme
+
 
     public MessagePage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -35,4 +35,5 @@ public class MessagePage {
 
         @FindBy(xpath = "//img[@class='files-preview']")
         public WebElement image;
+
 }
