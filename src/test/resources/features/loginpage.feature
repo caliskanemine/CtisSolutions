@@ -1,7 +1,6 @@
 Feature: Default
 
 
-
 	@CTSL10-321
 	Scenario: Verify user type 'Human Resource ' can login
 		Given user is on the login page

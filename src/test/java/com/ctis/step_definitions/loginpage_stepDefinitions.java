@@ -91,4 +91,5 @@ public class loginpage_stepDefinitions {
     public void userSeesTheWrittenPasswordInBulletSigns() {
           Assert.assertEquals(loginPageElements.isBulletSign(), "password");
     }
+
 }

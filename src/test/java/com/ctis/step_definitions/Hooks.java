@@ -8,7 +8,9 @@ import com.ctis.utilities.Driver;
 
 public class Hooks {
 
+
         @After
+
         public void teardownScenario(Scenario scenario) {
 
             if (scenario.isFailed()) {
@@ -17,7 +19,9 @@ public class Hooks {
                 scenario.attach(screenshot, "image/png", scenario.getName());
             }
 
+
            Driver.closeDriver();
         }
+
 
 
