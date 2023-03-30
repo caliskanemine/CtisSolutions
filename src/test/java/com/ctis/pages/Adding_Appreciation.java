@@ -50,20 +50,11 @@ public class Adding_Appreciation {
     @FindBy(id="blog-submit-button-save")
     public WebElement sendButton;
 
-    @FindBy(xpath = "//html//body/a")
-    public WebElement linkedUrlMessage;
-
     @FindBy(xpath = "//span[@title='Insert video']")
     public WebElement insertVideoButton;
 
     @FindBy(id="video_idPostFormLHE_blogPostForm-source")
     public WebElement videoSourceBox;
-
-    @FindBy(xpath = "//div//input[@value='Save']")
-    public WebElement videoSaveButton;
-
-    @FindBy(xpath = "(//a[@class='feed-post-user-name'])[1]")
-    public WebElement userTypeName;
 
     @FindBy(xpath = "//*[@id=\"bx-admin-prefix\"]/div[2]/div[1]/div[2]/div/table/tbody/tr[2]/td/span")
     public WebElement vimeoErrorMessage;

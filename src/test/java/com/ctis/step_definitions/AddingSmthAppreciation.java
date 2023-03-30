@@ -92,17 +92,7 @@ public class AddingSmthAppreciation {
 
     adding_appreciation.sendButton.click();
     }
-/*
-    @Then("User can see the message as url into the text")
-    public void userCanSeeTheMessageAsUrlIntoTheText() {
-       Actions actions=new Actions(Driver.getDriver());
-       actions.moveToElement(adding_appreciation.messageArea);
-        String actual = adding_appreciation.linkedUrlMessage.getAttribute("href");
-        String expected="https://www.bestholiday.com/";
-        Assert.assertEquals(expected,actual);
-    }
 
- */
 
     @Then("User sees the message or go to page that url added in to the message")
     public void userSeesTheMessageOrGoToPageThatUrlAddedInToTheMessage() {
@@ -129,22 +119,13 @@ public class AddingSmthAppreciation {
     }
 
 
-    @And("User clicks save button")
-    public void userClicksSaveButton() {
-        BrowserUtils.sleep(2);
-      adding_appreciation.videoSaveButton.click();
-      BrowserUtils.sleep(5);
-
-
-    }
-
 
     @And("User enters url youtube link into the video source box")
     public void userEntersUrlYoutubeLinkIntoTheVideoSourceBox() {
         adding_appreciation.videoSourceBox.click();
         BrowserUtils.sleep(1);
         adding_appreciation.videoSourceBox.sendKeys("https://www.youtube.com/watch?v=5c5dXSbEjNM");
-        BrowserUtils.sleep(3);
+        BrowserUtils.sleep(5);
 
     }
 
@@ -162,13 +143,13 @@ public class AddingSmthAppreciation {
         String message=adding_appreciation.messageArea.getText();
         Assert.assertTrue(message.isEmpty());
     }
-
+/*
     @Then("User sees the message area is empty")
     public void userSeesTheMessageAreaIsEmpty() {
         String message=adding_appreciation.messageArea.getText();
         Assert.assertTrue(message.isEmpty());
     }
-
+*/
      @Then("User does not see the vimeo error message")
     public void userDoesNotSeeTheVimeoErrorMessage() {
 
