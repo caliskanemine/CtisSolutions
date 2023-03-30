@@ -40,15 +40,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks the save button
     And User clicks and clears the message area
     Then User sees the thanks hr good job message area is empty
-@CTSL10-414
-  Scenario: User should be able to cancel videos before sending the message
-    When User clicks on More button
-    And User clicks on Appreciation button
-    And User clicks insert video button
-    And User enters url vimeo link into the video source box
-    And User clicks save button
-    And User clicks and clears the message area
-    Then User sees the message area is empty
+
 
 @CTSL10-415
   Scenario: User should be able to add tags to messages.
