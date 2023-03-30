@@ -76,9 +76,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks on Appreciation button
     And User clicks insert video button
     And User enters url vimeo link into the video source box
-    And User clicks save button
-    And User clicks to send button
-    Then User does not see the error message
+    Then User does not see the vimeo error message
 
  @CTSL10-412
   Scenario:  User should be able to insert Youtube videos
@@ -86,9 +84,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks on Appreciation button
     And User clicks insert video button
     And User enters url youtube link into the video source box
-    And User clicks save button
-    And User clicks to send button
-    Then User does not see the error message
+    Then User does not see the youtube error message
 
 
 

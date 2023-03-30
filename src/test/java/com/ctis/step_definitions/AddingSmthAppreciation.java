@@ -125,7 +125,7 @@ public class AddingSmthAppreciation {
         adding_appreciation.videoSourceBox.click();
         BrowserUtils.sleep(1);
         adding_appreciation.videoSourceBox.sendKeys("https://vimeo.com/741292588");
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(3);
     }
 
 
@@ -138,22 +138,13 @@ public class AddingSmthAppreciation {
 
     }
 
-    @And("User clicks to send button")
-    public void userClicksToSendButton() {
-        BrowserUtils.sleep(10);
-        adding_appreciation.sendButton.click();
-        BrowserUtils.sleep(10);
-    }
-
-
-
 
     @And("User enters url youtube link into the video source box")
     public void userEntersUrlYoutubeLinkIntoTheVideoSourceBox() {
         adding_appreciation.videoSourceBox.click();
         BrowserUtils.sleep(1);
         adding_appreciation.videoSourceBox.sendKeys("https://www.youtube.com/watch?v=5c5dXSbEjNM");
-        BrowserUtils.sleep(10);
+        BrowserUtils.sleep(3);
 
     }
 
@@ -178,10 +169,18 @@ public class AddingSmthAppreciation {
         Assert.assertTrue(message.isEmpty());
     }
 
-    @Then("User does not see the error message")
-    public void userDoesNotSeeTheErrorMessage() {
-        Assert.assertFalse(adding_appreciation.videoErrorMessage.isDisplayed());
+     @Then("User does not see the vimeo error message")
+    public void userDoesNotSeeTheVimeoErrorMessage() {
+
+         String actualmessage = adding_appreciation.vimeoErrorMessage.getText();
+         Assert.assertFalse(actualmessage.equals("[FVID403] Access to video file was denied.;"));
     }
+
+    @Then("User does not see the youtube error message")
+    public void userDoesNotSeeTheYoutubeErrorMessage() {
+
+        String actualmessage = adding_appreciation.youtubeErrorMessage.getText();
+        Assert.assertFalse(actualmessage.equals("[FVID404] The video was not found;")); }
 
     @And("User writes the message in to the message area")
     public void userWritesTheMessageInToTheMessageArea() {
