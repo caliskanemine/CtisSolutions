@@ -8,6 +8,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     Then clicks to the Log In button
     And user lands on the home page.
 
+   @CTSL10-409
   Scenario: User should be able to add mentions in appreciation
     When User clicks on More button
     And User clicks on Appreciation button
@@ -16,6 +17,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     Then User chooses hr1@cybertekschool.com from list
     And User can see who are mentioned in the TO field
 
+@CTSL10-410
   Scenario: User should be able to attach a link to the specified text
     When User clicks on More button
     And User clicks on Appreciation button
@@ -26,6 +28,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks send button
     Then User can see the message as url under the activity stream
 
+@CTSL10-413
   Scenario: User should be able to cancel links before sending the message
     When User clicks on More button
     And User clicks on Appreciation button
@@ -35,7 +38,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks the save button
     And User clicks and clears the message area
     Then User sees the thanks hr good job message area is empty
-
+@CTSL10-414
   Scenario: User should be able to cancel videos before sending the message
     When User clicks on More button
     And User clicks on Appreciation button
@@ -45,7 +48,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks and clears the message area
     Then User sees the message area is empty
 
-
+@CTSL10-415
   Scenario: User should be able to add tags to messages.
     When User clicks on More button
     And User clicks on Appreciation button
@@ -55,7 +58,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks to send button
     Then User can see the person who added besides Tag: word
 
-
+@CTSL10-416
     Scenario: User should be able to remove tags before sending the message
       When User clicks on More button
       And User clicks on Appreciation button
@@ -65,7 +68,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
       And User clicks x to remove the person from tag field
       Then User sees only +add more into the tags field
 
-
+@CTSL10-411
   Scenario:  User should be able to insert Vimeo videos
     When User clicks on More button
     And User clicks on Appreciation button
@@ -75,7 +78,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
     And User clicks to send button
     Then User does not see the error message
 
-
+ @CTSL10-412
   Scenario:  User should be able to insert Youtube videos
     When User clicks on More button
     And User clicks on Appreciation button
