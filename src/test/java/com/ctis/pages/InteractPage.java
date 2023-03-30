@@ -1,5 +1,6 @@
 package com.ctis.pages;
 
+import com.ctis.utilities.BrowserUtils;
 import com.ctis.utilities.Driver;
 import io.cucumber.java.zh_cn.假如;
 import org.junit.Assert;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import javax.sql.rowset.BaseRowSet;
 
 public class InteractPage {
 
@@ -18,10 +21,10 @@ public class InteractPage {
     @FindBy(xpath = "(//a[text()='Add comment'])[1]")
     public WebElement addComment;
 
-    @FindBy(xpath = "//button[contains(@id, 'lhe_button_submit_sonetCommentForm')]")
+    @FindBy(xpath = "(//div[@class='feed-add-post-buttons'])[1]//button[.='Send']")
     public WebElement sendButton;
 
-    @FindBy(xpath ="(//div//a[@class='bx-ilike-text'])[2]")
+    @FindBy(xpath ="(//div//a[@class='bx-ilike-text'])[1]")
     public WebElement likeButton;
 
 
@@ -32,7 +35,7 @@ public class InteractPage {
     public WebElement userComment;
 
 
-    @FindBy(xpath = "//div[contains(@id, 'bx-ilike-top-users-BLOG_POST_227')]")
+    @FindBy(xpath = "//div[contains(@id, 'bx-ilike-top-users-BLOG_POST')][.='You']")
     public WebElement likeSign;
 
     @FindBy(xpath = "(//a[text()='Follow'])[1]")
@@ -53,7 +56,7 @@ public class InteractPage {
     public WebElement removeStarButton;
 
     public void likeCommand(String username){
-      WebElement likeButton =  Driver.getDriver().findElement(By.xpath("(//div//a[text()='" +username + "'])[1]/../../../..//div//a[text()='Like']"));
+      WebElement likeButton =  Driver.getDriver().findElement(By.xpath("(//div//a[text()='" + username + "'])[1]/../../../..//div//a[text()='Like']"));
       likeButton.click();
 
     }
@@ -71,7 +74,9 @@ public class InteractPage {
 
         actions.doubleClick(commentArea).perform();
         actions.sendKeys(message).perform();
-        sendCommentButton.click();
+        BrowserUtils.sleep(2);
+
+        actions.click(sendCommentButton).perform();
     }
 
     public void verifyNewComment(String message){
