@@ -70,7 +70,7 @@ Feature: Filter and search functionality
     And user clicks to the Restore default fields button
     Then user should see Date, Type, Author and To fields checked and Favorites, Tag, Extranet fields unchecked as default
 
-  @CTSL10-406
+  @CTSL10-407
   Scenario: Verify that user should be able to reset filters to default.
     Given user hover over and clicks the filter and search box
     When user clicks to the add field button
