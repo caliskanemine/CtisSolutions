@@ -64,8 +64,23 @@ public class Adding_Appreciation {
     @FindBy(xpath = "(//a[@class='feed-post-user-name'])[1]")
     public WebElement userTypeName;
 
-    @FindBy(xpath = "//span[@class='bxhtmled-video-error']")
+    @FindBy(xpath = "//*[@id=\"feed-add-post-form-notice-blockblogPostForm\"]/div/span[2]")
     public WebElement videoErrorMessage;
 
+    @FindBy(id="bx-b-tag-input-blogPostForm")
+    public WebElement tagsButton;
 
+    @FindBy(id="TAGS_blogPostForm67abSn")
+    public WebElement tagsField;
+
+
+     @FindBy(xpath = "//*[@id=\"blogpost-tags-258\"]/a")
+    public WebElement addedPartTag;
+
+
+     @FindBy(xpath = "//*[@id=\"post-tags-container-blogPostForm\"]/span[1]/span")
+    public WebElement cancelTag;
+
+     @FindBy(xpath = "//*[@id=\"post-tags-add-new-blogPostForm\"]")
+    public WebElement tagsField2;
 }
