@@ -37,6 +37,8 @@ public class MessageStepDef {
        BrowserUtils.sleep(2);
        messagePage.uploadFileAndImagesButton.sendKeys("C:\\Users\\Rose\\Desktop\\abc3.docx");
        BrowserUtils.sleep(2);
+        messagePage.uploadFileAndImagesButton.sendKeys("C:\\Users\\Rose\\Desktop\\abc5.png");
+        BrowserUtils.sleep(2);
 
 
     }

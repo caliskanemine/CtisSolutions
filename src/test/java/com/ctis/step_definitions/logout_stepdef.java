@@ -52,5 +52,4 @@ public class logout_stepdef {
                 Assert.assertEquals(expectedPage,actualPage);
 
     }
-
 }
