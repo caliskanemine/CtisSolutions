@@ -17,9 +17,7 @@ public class EventPageElements {
 
 public String groupName;
 public String groupAllemployee;
-
 public String employeeEmail;
-
 public int hour, minute;
     @FindBy(id = "feed-add-post-form-tab-calendar")
     public WebElement eventButton;
@@ -34,7 +32,8 @@ public int hour, minute;
 
     @FindBy(name = "TIME_FROM_")
     public WebElement startTime;
-/*  the methods have written for that locaters
+
+/*  the methods have written for that locators
     @FindBy(xpath = "//input[@title='Hours']")
     public WebElement startclockHour;
 
@@ -83,38 +82,29 @@ public int hour, minute;
     @FindBy(xpath = "/html//input[@id='feed-event-dest-input']")
     public WebElement membersWriteBarButton;
 
-
+/* the methods have written for that locators
     @FindBy(partialLinkText = "hr15@cybertekschool.com")
     public WebElement hr15Button;
 
     @FindBy(xpath = "/html//div[@id='bx-lm-box-search-content']//a[@href='#U510']//div[@class='bx-finder-box-item-t7-name']")
     public WebElement hd20Button;
 
-    @FindBy(xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-department']")
-    public WebElement allDepartmentButton;
 
     @FindBy(xpath = "/html//div[@id='bx-lm-box-last-content']/table[@class='bx-finder-box-tabs-content-table']//td/div[2]/div[2]/div[5]/a[@href='#DR138']/div[@class='bx-finder-company-department-text']")
     public WebElement group15Button;
 
     @FindBy(xpath = "/html//div[@id='bx-lm-box-last-content']/table[@class='bx-finder-box-tabs-content-table']//td[@class='bx-finder-box-tabs-content-cell']/div[2]/div[2]/div[6]/a[@href='#DR138']//div[@class='bx-finder-company-department-check-arrow']")
     public WebElement group15AllDepartmentButton;
+*/
 
+    @FindBy(xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-department']")
+    public WebElement allDepartmentButton;
 
     @FindBy(id = "blog-submit-button-save")
     public WebElement sendButton;
 
     @FindBy(id = "blog-submit-button-cancel")
     public WebElement cancelButton;
-
-
-
-
-
-    public void getGroupName(String groupName){
-        this.groupName=groupName;
-        String locater = groupName;
-        Driver.getDriver().findElement(By.partialLinkText(locater)).click();
-    }
 
     public void setStartTime(int hour, int minute){
         this.hour=hour;
@@ -129,6 +119,7 @@ public int hour, minute;
         WebDriverWait wait2= new WebDriverWait(Driver.getDriver(),10);
         wait2.until(ExpectedConditions.visibilityOf(minuteLocater));
         minuteLocater.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);
+        setstartTimeButton.click();
     }
 
     public void setEndTime(int hour, int minute){
@@ -144,9 +135,8 @@ public int hour, minute;
         WebDriverWait wait2= new WebDriverWait(Driver.getDriver(),10);
         wait2.until(ExpectedConditions.visibilityOf(minuteLocater));
         minuteLocater.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);
+        setendTimeButton.click();
     }
-
-
 
     public void addEmployee(String employeeEmail){
         this.employeeEmail=employeeEmail;
@@ -154,6 +144,13 @@ public int hour, minute;
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(employeeLocater));
         employeeLocater.click();
+    }
+
+    public void getGroupName(String groupName){
+        this.groupName=groupName;
+        /* String locator = groupName;
+        Driver.getDriver().findElement(By.partialLinkText(locator)); */
+        Driver.getDriver().findElement(By.partialLinkText(groupName)).click();
     }
 
     public void getGroupAllEmployee(String groupName){
