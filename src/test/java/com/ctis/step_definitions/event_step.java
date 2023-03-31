@@ -164,7 +164,7 @@ public class event_step {
         eventPageElements.eventName.sendKeys(name);
     }
 
-    @Then("click send button")
+    @Then("click send event button")
     public void click_send_button() {
         eventPageElements.sendButton.click();
     }

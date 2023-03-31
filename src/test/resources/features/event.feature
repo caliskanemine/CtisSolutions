@@ -3,7 +3,7 @@ Feature:User use all Event functionality
 
   Background: Verify user type 'Human Resource ' can login
     Given user is on the login page
-    When user enters username "hr1@cybertekschool.com"
+    When user enters username "hr11@cybertekschool.com"
     And user enters password "UserUser"
     Then clicks to the Log In button
     And user lands on the home page.
@@ -57,20 +57,20 @@ Feature:User use all Event functionality
     Then user add "<groupname>" group
     Then user click All department and sub-department radiobutton about "<groupname>"
     Examples:
-      | Email                          | groupname    |
-      | hr99@cybertekschool.com        | group15      |
-      | hr10@cybertekschool.com        | group15      |
-      | helpdesk20@cybertekschool.com  | Tester       |
-      | helpdesk30@cybertekschool.com  | group17      |
-      | marketing40@cybertekschool.com | child for 16 |
-      | marketing50@cybertekschool.com | Developer    |
+      | Email                          | groupname   |
+      | hr99@cybertekschool.com        | Everything2 |
+      | hr10@cybertekschool.com        | Parent      |
+      | helpdesk20@cybertekschool.com  | Tester2     |
+      | helpdesk30@cybertekschool.com  | group17     |
+      | marketing40@cybertekschool.com | Everything2 |
+      | marketing50@cybertekschool.com | Developer   |
 
 
   @CTSL10-384
   Scenario Outline: User should be able to send message by filling the mandatory fields
     And user click event name bar
     Then user write "<event name>"
-    Then click send button
+    Then click send event button
     Examples:
       | event name       |
       | Grooming Meeting |
@@ -88,8 +88,8 @@ Feature:User use all Event functionality
     Then user click members bar
     Then user add "hr15@cybertekschool.com"
     Then user click Employees and department button
-    Then user add "group15" group
-    Then user click All department and sub-department radiobutton about "group15"
+    Then user add "group17" group
+    Then user click All department and sub-department radiobutton about "group17"
     Then user cancel event
 
     When user click to event button
