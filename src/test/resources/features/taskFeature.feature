@@ -14,7 +14,7 @@ Feature: As a user, I should be able to assign tasks under Quick Navigate Menu.
     Given User clicks Task tab
     And User writes into things to do title
     And User clicks high priority ckeckbox
-    And User clicks send button
+    And User clicks send buttonn
     Then Verify hr user creates high priority task with mandatory fields
 
 
@@ -23,7 +23,7 @@ Feature: As a user, I should be able to assign tasks under Quick Navigate Menu.
     Given User clicks Task tab
     And User writes into things to do title
     And User clicks add more button, and select three users
-    And User clicks send button
+    And User clicks send buttonn
     Then Verify hr user creates task to more three users
 
 
@@ -32,7 +32,7 @@ Feature: As a user, I should be able to assign tasks under Quick Navigate Menu.
     Given User clicks Task tab
     And User writes into things to do title
     And User clicks Checklist and add two things
-    And User clicks send button
+    And User clicks send buttonn
     Then Verify hr user can add checklist while creating task
 
 
@@ -41,5 +41,5 @@ Feature: As a user, I should be able to assign tasks under Quick Navigate Menu.
     Given User clicks Task tab
     And User writes into things to do title
     And User clicks deadline and select the default deadline
-    And User clicks send button
+    And User clicks send buttonn
     Then Verify hr user can add deadline while creating task

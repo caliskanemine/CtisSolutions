@@ -38,9 +38,10 @@ public class TaskStepDefinitions {
     public void user_clicks_closing_x_btn() {
         taskPage.closingX.click();
     }
-    @When("User clicks send button")
-    public void user_clicks_send_button() {
+    @When("User clicks send buttonn")
+    public void user_clicks_send_buttonn() {
         taskPage.saveButton.click();
+
     }
     @Then("Verify hr user creates high priority task with mandatory fields")
     public void verify_hr_user_creates_high_priority_task_with_mandatory_fields() {
