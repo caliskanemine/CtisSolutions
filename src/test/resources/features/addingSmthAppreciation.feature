@@ -1,6 +1,5 @@
 @CTSL10-417
-Feature: As a user,I should be able to add link, insert video, mention,
-  quote, add tag in Appreciation
+Feature: As a user,I should be able to add link, insert video, mention,add tag in Appreciation
 
   Background: user is already logged in
     Given user is on the login page
@@ -31,7 +30,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
 
 
 @CTSL10-413
-  Scenario: User should be able to cancel links before sending the message
+  Scenario: User should be able to cancel links before sending
     When User clicks on More button
     And User clicks on Appreciation button
     And User clicks link button
@@ -43,7 +42,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
 
 
 @CTSL10-415
-  Scenario: User should be able to add tags to messages.
+  Scenario: User should be able to add tags.
     When User clicks on More button
     And User clicks on Appreciation button
     And User writes the message in to the message area
@@ -53,7 +52,7 @@ Feature: As a user,I should be able to add link, insert video, mention,
 
 
 @CTSL10-416
-    Scenario: User should be able to remove tags before sending the message
+    Scenario: User should be able to remove tags before sending
       When User clicks on More button
       And User clicks on Appreciation button
       And User writes the message in to the message area
