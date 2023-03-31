@@ -38,7 +38,8 @@ public class event_step {
         eventPageElements.clockHour.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + hour);
         eventPageElements.clockMinutes.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);*/
         eventPageElements.setStartTime(hour,minute);
-        eventPageElements.setstartTimeButton.click();
+       // eventPageElements.setstartTimeButton.click();
+       // this comment parts was used at method
     }
 
     @Then("user add new event end date {string}")
@@ -55,7 +56,8 @@ public class event_step {
         eventPageElements.clockMinutes.sendKeys(Keys.chord(Keys.CONTROL + "a") + Keys.BACK_SPACE + minute);
         */
         eventPageElements.setEndTime(hour,minute);
-        eventPageElements.setendTimeButton.click();
+       // eventPageElements.setendTimeButton.click();
+       // this comment parts was used at method
     }
 
     @Then("user specify the time zone as {string}")
@@ -113,6 +115,7 @@ public class event_step {
 */
         eventPageElements.addEmployee(employeeEmail);
        // eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
+       // this comment parts was used at method
     }
 
     /*@Then("user add helpdesk20@cybertekschool.com")
@@ -124,7 +127,9 @@ public class event_step {
         wait.until(ExpectedConditions.visibilityOf(eventPageElements.hd20Button));
         eventPageElements.hd20Button.click();
         // eventPageElements.membersWriteBarButton.sendKeys(Keys.ENTER);
-    }*/
+    }
+    written method for this step
+    */
 
     @Then("user click Employees and department button")
     public void user_click_employees_and_department_button() {
@@ -132,8 +137,6 @@ public class event_step {
         eventPageElements.allDepartmentButton.click();
 
     }
-
-
 
 
     @Then("user add {string} group")
