@@ -115,6 +115,8 @@ public class EmployeeStepDef {
 
     @And("user click Edit department button")
     public void userClickEditDepartmentButton() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(employeePage.editDepartmentContainer).perform();
         employeePage.editDepartmentButton.click();
     }
 
