@@ -51,6 +51,10 @@ public class EmployeePage {
 
     @FindBy(xpath = "//div[@title='Add child department']")
     public WebElement addChildButton;
+
+    @FindBy(xpath = "//div[@class='structure-dept-title-text']")
+            public WebElement editDepartmentContainer;
+
     @FindBy(xpath = "//td[@class='bx-str-top']//div[@title='Edit department']")
     public WebElement editDepartmentButton;
 
